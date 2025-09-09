@@ -120,5 +120,5 @@ write_gds -design ${design}_route \
  ../outputs/${design}.gds
 
 save_block -as ${design}.dlib:${design}_route.design
-report_area -include filler
-report_area -physical_only
+#report_area -include filler
+#report_area -physical_only
