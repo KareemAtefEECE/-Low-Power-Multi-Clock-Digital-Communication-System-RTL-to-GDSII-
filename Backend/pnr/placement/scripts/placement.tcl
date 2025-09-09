@@ -116,13 +116,13 @@ check_pg_drc  > ../reports/drc_spare_cells_steps.rpt
 # -- Performs coarse {approximate locations for cells, Cells overlap,No logic optimization }
 # --- buffering_aware_timing_driven :  model that estimates the effects of buffering long nets and high fanout nets later in the flow.
 #create_placement -effort high  -congestion -congestion_effort  high   -incremental
-create_placement  -effort high  \
-				  -timing_driven -buffering_aware_timing_driven \
-				  -congestion -congestion_effort  medium   -incremental
+#create_placement  -effort high  \
+#				  -timing_driven -buffering_aware_timing_driven \
+#				  -congestion -congestion_effort  medium   -incremental
 
 # --- Legalized placement each  illegal cell will be legal location 
-legalize_placement  -incremental 
-check_pg_drc  > ../reports/drc_legalized.rpt
+#legalize_placement  -incremental 
+#check_pg_drc  > ../reports/drc_legalized.rpt
 
 
 # ================================================ #
