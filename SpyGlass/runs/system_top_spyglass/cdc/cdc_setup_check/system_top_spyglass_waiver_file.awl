@@ -1,0 +1,2 @@
+waive -msg {Port coverage for top design unit 'SYSTEM_TOP' is: '1' (25.00 %) port(s) not fully constrained}  -rule {  {Setup_port01}  }  -comment {Created by ICer on 24-Aug-2025 22:24:47}  -exact 
+waive -msg {Abstracted sgdc file for input ports of block 'SYSTEM_TOP' is generated}  -rule {  {Setup_port01}  }  -comment {Created by ICer on 24-Aug-2025 22:25:01}  -exact 

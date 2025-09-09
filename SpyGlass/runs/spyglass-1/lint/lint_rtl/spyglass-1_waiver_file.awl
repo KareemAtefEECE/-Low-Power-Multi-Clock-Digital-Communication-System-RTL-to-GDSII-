@@ -1,0 +1,3 @@
+waive -du {  {CLK_GATE}  }  -msg {Latch inferred for signal 'Latch' in module 'CLK_GATE'}  -rule {  {InferLatch}  }  -comment {Created by ICer on 24-Aug-2025 17:39:29}  -exact 
+waive -du {  {SYS_CTRL}  }  -msg {Latch inferred for signal 'Address[3:0]' in module 'SYS_CTRL'}  -rule {  {InferLatch}  }  -comment {Created by ICer on 24-Aug-2025 17:56:54}  -exact 
+waive -du {  {edge_bit_counter}  }  -msg {Combinational and sequential parts of an FSM described in same always block}  -rule {  {STARC05-2.11.3.1}  }  -comment {Created by ICer on 24-Aug-2025 18:31:57}  -exact 

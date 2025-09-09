@@ -1,0 +1,24 @@
+****************************************
+Report : report_placement
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 16:43:58 2025
+****************************************
+
+  Wire length report (all)
+  ==================
+  wire length in design SYSTEM_TOP_pl: 64901.352 microns.
+  wire length in design SYSTEM_TOP_pl (see through blk pins): 64901.352 microns.
+
+  Physical hierarchy violations report
+  ====================================
+  Violations in design SYSTEM_TOP_pl:
+     0 cells have placement violation.
+
+  Voltage area violations report
+  ====================================
+  Voltage area placement violations in design SYSTEM_TOP_pl:
+     0 cells placed outside the voltage area which they belong to.
+
+Information: Default error view SYSTEM_TOP_pl_dpplace.err is created in GUI error browser. (DPP-054)
+1

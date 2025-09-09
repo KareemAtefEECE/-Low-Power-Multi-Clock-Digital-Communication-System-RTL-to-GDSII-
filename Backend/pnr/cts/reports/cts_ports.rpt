@@ -1,0 +1,53 @@
+****************************************
+Report : port
+        -design_rule
+        -input_delay
+        -drive
+        -output_delay
+Module : SYSTEM_TOP
+Mode   : default
+Corner : default
+Scenario: default
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 19:16:48 2025
+****************************************
+                      Pin Cap                    Wire Cap
+                   Min          Max           Min          Max
+Port      Dir    rise/fall    rise/fall     rise/fall    rise/fall    Attributes
+--------------------------------------------------------------------------------
+FUN_REF_CLK
+          in     0.00/0.00    0.00/0.00     0.00/0.00    0.00/0.00
+FUN_UART_CLK
+          in     0.00/0.00    0.00/0.00     0.00/0.00    0.00/0.00
+SCAN_CLK  in     0.00/0.00    0.00/0.00     0.00/0.00    0.00/0.00
+
+Port           MaxTrans MaxCap   MinCap
+-------------------------------------------
+FUN_REF_CLK    --       --       --
+FUN_UART_CLK   --       --       --
+SCAN_CLK       --       --       --
+
+                      Input Delay
+                    Min             Max       Related Related
+ Input Port     Rise    Fall    Rise    Fall   Clock   Pin
+-----------------------------------------------------------------
+FUN_REF_CLK     --      --      --      --      --      --
+FUN_UART_CLK    --      --      --      --      --      --
+SCAN_CLK        --      --      --      --      --      --
+
+            Resistance (min/max)
+Input Port  Rise             Fall
+--------------------------------------------------------------------------------
+FUN_REF_CLK --               --
+FUN_UART_CLK
+            --               --
+SCAN_CLK    --               --
+
+            Transition (min/max)
+Input Port  Rise             Fall             Related Clock
+--------------------------------------------------------------------------------
+FUN_REF_CLK 0.30/0.30        0.20/0.20
+FUN_UART_CLK
+            0.30/0.30        0.20/0.20
+SCAN_CLK    0.30/0.30        0.20/0.20
+1

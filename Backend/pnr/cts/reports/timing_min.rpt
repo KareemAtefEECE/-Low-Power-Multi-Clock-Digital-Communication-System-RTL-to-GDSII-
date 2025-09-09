@@ -1,0 +1,143 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 3
+        -report_by design
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 19:16:50 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+  Startpoint: U0_REG_FILE/regfile_reg[14][1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/RdData_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 0.35      0.35
+
+  U0_REG_FILE/regfile_reg[14][1]/CLK (SDFFARX1)    0.00      0.35 r
+  U0_REG_FILE/regfile_reg[14][1]/Q (SDFFARX1)      0.13      0.48 f
+  U0_REG_FILE/PLACE_copt_h_inst_5031/Z (NBUFFX2)   0.06      0.54 f
+  U0_REG_FILE/PLACE_copt_h_inst_5358/Z (NBUFFX2)   0.06      0.60 f
+  U0_REG_FILE/U289/Q (AO221X1)                     0.05      0.66 f
+  U0_REG_FILE/U294/Q (AO221X1)                     0.05      0.71 f
+  U0_REG_FILE/PLACE_copt_h_inst_8970/Z (NBUFFX16)
+                                                   0.08      0.78 f
+  U0_REG_FILE/PLACE_copt_h_inst_8967/Z (NBUFFX32)
+                                                   0.09      0.87 f
+  U0_REG_FILE/PLACE_copt_h_inst_8969/Z (NBUFFX32)
+                                                   0.09      0.96 f
+  U0_REG_FILE/PLACE_copt_h_inst_8968/Z (NBUFFX2)   0.06      1.02 f
+  U0_REG_FILE/U362/Q (AO22X1)                      0.04      1.06 f
+  U0_REG_FILE/RdData_reg[1]/D (SDFFARX1)           0.00      1.06 f
+  data arrival time                                          1.06
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 1.49      1.49
+  clock reconvergence pessimism                   -0.53      0.96
+  U0_REG_FILE/RdData_reg[1]/CLK (SDFFARX1)         0.00      0.96 r
+  clock uncertainty                                0.10      1.06
+  library hold time                               -0.00      1.06
+  data required time                                         1.06
+  ------------------------------------------------------------------------
+  data required time                                         1.06
+  data arrival time                                         -1.06
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.00
+
+
+
+  Startpoint: U0_SYS_CTRL/cs_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/regfile_reg[6][6] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 0.35      0.35
+
+  U0_SYS_CTRL/cs_reg[1]/CLK (SDFFARX1)             0.00      0.35 r
+  U0_SYS_CTRL/cs_reg[1]/QN (SDFFARX1)              0.11      0.46 r
+  U0_SYS_CTRL/U109/QN (NAND3X0)                    0.04      0.50 f
+  U0_SYS_CTRL/U94/QN (NAND3X0)                     0.03      0.53 r
+  PLACE_copt_h_inst_4929/Z (NBUFFX2)               0.06      0.59 r
+  PLACE_copt_h_inst_4928/Z (DELLN3X2)              0.23      0.82 r
+  PLACE_HFSINV_907_243/ZN (INVX1)                  0.03      0.85 f
+  U0_REG_FILE/U215/QN (NOR2X0)                     0.03      0.87 r
+  U0_REG_FILE/PLACE_copt_h_inst_4996/Z (NBUFFX2)   0.06      0.93 r
+  U0_REG_FILE/U212/Q (AND2X1)                      0.06      0.99 r
+  U0_REG_FILE/U173/QN (NAND2X2)                    0.05      1.04 f
+  U0_REG_FILE/U95/Q (AO22X1)                       0.05      1.08 f
+  U0_REG_FILE/regfile_reg[6][6]/D (SDFFARX1)       0.00      1.08 f
+  data arrival time                                          1.08
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 1.51      1.51
+  clock reconvergence pessimism                   -0.53      0.98
+  U0_REG_FILE/regfile_reg[6][6]/CLK (SDFFARX1)     0.00      0.98 r
+  clock uncertainty                                0.10      1.08
+  library hold time                                0.00      1.08
+  data required time                                         1.08
+  ------------------------------------------------------------------------
+  data required time                                         1.08
+  data arrival time                                         -1.08
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.00
+
+
+
+  Startpoint: U0_SYS_CTRL/cs_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/regfile_reg[6][7] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 0.35      0.35
+
+  U0_SYS_CTRL/cs_reg[1]/CLK (SDFFARX1)             0.00      0.35 r
+  U0_SYS_CTRL/cs_reg[1]/QN (SDFFARX1)              0.11      0.46 r
+  U0_SYS_CTRL/U109/QN (NAND3X0)                    0.04      0.50 f
+  U0_SYS_CTRL/U94/QN (NAND3X0)                     0.03      0.53 r
+  PLACE_copt_h_inst_4929/Z (NBUFFX2)               0.06      0.59 r
+  PLACE_copt_h_inst_4928/Z (DELLN3X2)              0.23      0.82 r
+  PLACE_HFSINV_907_243/ZN (INVX1)                  0.03      0.85 f
+  U0_REG_FILE/U215/QN (NOR2X0)                     0.03      0.87 r
+  U0_REG_FILE/PLACE_copt_h_inst_4996/Z (NBUFFX2)   0.06      0.93 r
+  U0_REG_FILE/U212/Q (AND2X1)                      0.06      0.99 r
+  U0_REG_FILE/U173/QN (NAND2X2)                    0.05      1.04 f
+  U0_REG_FILE/U96/Q (AO22X1)                       0.05      1.08 f
+  U0_REG_FILE/regfile_reg[6][7]/D (SDFFARX1)       0.00      1.08 f
+  data arrival time                                          1.08
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 1.51      1.51
+  clock reconvergence pessimism                   -0.53      0.98
+  U0_REG_FILE/regfile_reg[6][7]/CLK (SDFFARX1)     0.00      0.98 r
+  clock uncertainty                                0.10      1.08
+  library hold time                                0.00      1.08
+  data required time                                         1.08
+  ------------------------------------------------------------------------
+  data required time                                         1.08
+  data arrival time                                         -1.08
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.00
+
+
+1

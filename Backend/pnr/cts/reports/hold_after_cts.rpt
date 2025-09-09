@@ -1,0 +1,125 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 3
+        -report_by design
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Sat Aug 30 21:26:51 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+  Startpoint: U0_REG_FILE/regfile_reg[0][2] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg[1] (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: ALU_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 0.55      0.55
+
+  U0_REG_FILE/regfile_reg[0][2]/CLK (SDFFARX1)     0.00      0.55 r
+  U0_REG_FILE/regfile_reg[0][2]/QN (SDFFARX1)      0.10      0.65 r
+  U0_REG_FILE/PLACE_copt_d_inst_9948/ZN (INVX4)    0.03      0.68 f
+  U0_ALU/U93/Q (AO222X1)                           0.07      0.74 f
+  U0_ALU/U9/QN (NOR4X0)                            0.04      0.78 r
+  U0_ALU/U79/QN (NOR2X0)                           0.04      0.82 f
+  U0_ALU/ALU_OUT_reg[1]/D (SDFFARX1)               0.00      0.82 f
+  data arrival time                                          0.82
+
+  clock ALU_CLK (rise edge)                        0.00      0.00
+  clock network delay (propagated)                 2.23      2.23
+  clock reconvergence pessimism                   -0.48      1.75
+  U0_ALU/ALU_OUT_reg[1]/CLK (SDFFARX1)             0.00      1.75 r
+  clock uncertainty                                0.10      1.85
+  library hold time                               -0.01      1.84
+  data required time                                         1.84
+  ------------------------------------------------------------------------
+  data required time                                         1.84
+  data arrival time                                         -0.82
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -1.02
+
+
+
+  Startpoint: U0_REG_FILE/regfile_reg[0][4] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg[5] (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: ALU_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 0.55      0.55
+
+  U0_REG_FILE/regfile_reg[0][4]/CLK (SDFFARX1)     0.00      0.55 r
+  U0_REG_FILE/regfile_reg[0][4]/QN (SDFFARX1)      0.09      0.64 r
+  U0_REG_FILE/PLACE_copt_d_inst_10006/ZN (INVX2)   0.04      0.68 f
+  U0_ALU/PLACE_copt_h_inst_9611/Z (NBUFFX32)       0.10      0.78 f
+  U0_ALU/U69/Q (AO221X1)                           0.06      0.84 f
+  U0_ALU/U128/Q (OA21X1)                           0.04      0.88 f
+  U0_ALU/ALU_OUT_reg[5]/D (SDFFARX1)               0.00      0.88 f
+  data arrival time                                          0.88
+
+  clock ALU_CLK (rise edge)                        0.00      0.00
+  clock network delay (propagated)                 2.24      2.24
+  clock reconvergence pessimism                   -0.48      1.76
+  U0_ALU/ALU_OUT_reg[5]/CLK (SDFFARX1)             0.00      1.76 r
+  clock uncertainty                                0.10      1.86
+  library hold time                               -0.00      1.85
+  data required time                                         1.85
+  ------------------------------------------------------------------------
+  data required time                                         1.85
+  data arrival time                                         -0.88
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.97
+
+
+
+  Startpoint: U0_REG_FILE/RdData_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 0.55      0.55
+
+  U0_REG_FILE/RdData_reg[1]/CLK (SDFFARX1)         0.00      0.55 r
+  U0_REG_FILE/RdData_reg[1]/Q (SDFFARX1)           0.13      0.68 f
+  U0_SYS_CTRL/U104/QN (AOI222X1)                   0.07      0.76 r
+  U0_SYS_CTRL/PLACE_copt_h_inst_8068/Z (NBUFFX2)   0.05      0.81 r
+  U0_SYS_CTRL/U52/QN (NOR2X0)                      0.06      0.87 f
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/U45/Q (AO22X1)    0.06      0.92 f
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1]/D (SDFFARX1)
+                                                   0.00      0.92 f
+  data arrival time                                          0.92
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 2.10      2.10
+  clock reconvergence pessimism                   -0.32      1.78
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1]/CLK (SDFFARX1)
+                                                   0.00      1.78 r
+  clock uncertainty                                0.10      1.88
+  library hold time                                0.00      1.88
+  data required time                                         1.88
+  ------------------------------------------------------------------------
+  data required time                                         1.88
+  data arrival time                                         -0.92
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.96
+
+
+1

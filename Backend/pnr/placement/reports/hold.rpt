@@ -1,0 +1,733 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 20
+        -report_by design
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 16:43:58 2025
+****************************************
+
+  Startpoint: RST_SYNC_1/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/regfile_reg[1][1] (removal check against rising-edge clock clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_1/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_1/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U5_MUX2x1/U2/Q (MUX21X1)                         0.06      0.18 r
+  U0_REG_FILE/PLACE_HFSBUF_795_65/Z (NBUFFX2)      0.08      0.25 r
+  U0_REG_FILE/regfile_reg[1][1]/RSTB (SDFFARX1)    0.00      0.25 r
+  data arrival time                                          0.25
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_REG_FILE/regfile_reg[1][1]/CLK (SDFFARX1)     0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.40      0.50
+  data required time                                         0.50
+  ------------------------------------------------------------------------
+  data required time                                         0.50
+  data arrival time                                         -0.25
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.24
+
+
+
+  Startpoint: RST_SYNC_1/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/regfile_reg[1][3] (removal check against rising-edge clock clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_1/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_1/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U5_MUX2x1/U2/Q (MUX21X1)                         0.06      0.18 r
+  U0_REG_FILE/PLACE_HFSBUF_795_65/Z (NBUFFX2)      0.08      0.25 r
+  U0_REG_FILE/regfile_reg[1][3]/RSTB (SDFFARX1)    0.00      0.25 r
+  data arrival time                                          0.25
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_REG_FILE/regfile_reg[1][3]/CLK (SDFFARX1)     0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.40      0.50
+  data required time                                         0.50
+  ------------------------------------------------------------------------
+  data required time                                         0.50
+  data arrival time                                         -0.25
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.24
+
+
+
+  Startpoint: RST_SYNC_1/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/regfile_reg[3][1] (removal check against rising-edge clock clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_1/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_1/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U5_MUX2x1/U2/Q (MUX21X1)                         0.06      0.18 r
+  U0_REG_FILE/PLACE_HFSBUF_795_65/Z (NBUFFX2)      0.08      0.25 r
+  U0_REG_FILE/regfile_reg[3][1]/RSTB (SDFFARX1)    0.00      0.25 r
+  data arrival time                                          0.25
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_REG_FILE/regfile_reg[3][1]/CLK (SDFFARX1)     0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.40      0.50
+  data required time                                         0.50
+  ------------------------------------------------------------------------
+  data required time                                         0.50
+  data arrival time                                         -0.25
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.24
+
+
+
+  Startpoint: RST_SYNC_1/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/regfile_reg[1][2] (removal check against rising-edge clock clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_1/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_1/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U5_MUX2x1/U2/Q (MUX21X1)                         0.06      0.18 r
+  U0_REG_FILE/PLACE_HFSBUF_795_65/Z (NBUFFX2)      0.08      0.25 r
+  U0_REG_FILE/regfile_reg[1][2]/RSTB (SDFFARX2)    0.00      0.25 r
+  data arrival time                                          0.25
+
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_REG_FILE/regfile_reg[1][2]/CLK (SDFFARX2)     0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.38      0.48
+  data required time                                         0.48
+  ------------------------------------------------------------------------
+  data required time                                         0.48
+  data arrival time                                         -0.25
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.23
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][0] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][0]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][0]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][2] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][2]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][2]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_FSM/cs_reg[0] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_982_101/Z (NBUFFX2)   0.08      0.28 r
+  U0_UART/U0_TX/U0_FSM/cs_reg[0]/RSTB (SDFFARX1)   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_FSM/cs_reg[0]/CLK (SDFFARX1)    0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_SER/counter_reg[1] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_982_101/Z (NBUFFX2)   0.08      0.28 r
+  U0_UART/U0_TX/U0_SER/counter_reg[1]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_SER/counter_reg[1]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][0] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][0]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][0]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/PLACE_HFSBUF_846_99/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_SER/counter_reg[0] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_982_101/Z (NBUFFX2)   0.08      0.28 r
+  U0_UART/U0_TX/U0_SER/counter_reg[0]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_SER/counter_reg[0]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_1046_102/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_1046_102/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_1046_102/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_SER/counter_reg[2] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_982_101/Z (NBUFFX2)   0.08      0.28 r
+  U0_UART/U0_TX/U0_SER/counter_reg[2]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_SER/counter_reg[2]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+
+  Startpoint: RST_SYNC_2/sync_rst_reg[1] (rising edge-triggered flip-flop clocked by FUN_UART_CLK)
+  Endpoint: U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0] (removal check against rising-edge clock clocked by FUN_TX_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_TX_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_UART_CLK (rise edge)                   0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  RST_SYNC_2/sync_rst_reg[1]/CLK (SDFFARX1)        0.00      0.00 r
+  RST_SYNC_2/sync_rst_reg[1]/Q (SDFFARX1)          0.11      0.11 r
+  U6_MUX2x1/U2/Q (MUX21X2)                         0.08      0.20 r
+  U0_UART/U0_TX/PLACE_HFSBUF_1046_102/Z (NBUFFX2)
+                                                   0.08      0.28 r
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0]/RSTB (SDFFARX1)
+                                                   0.00      0.28 r
+  data arrival time                                          0.28
+
+  clock FUN_TX_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0]/CLK (SDFFARX1)
+                                                   0.00      0.00 r
+  clock uncertainty                                0.10      0.10
+  library hold time                                0.39      0.49
+  data required time                                         0.49
+  ------------------------------------------------------------------------
+  data required time                                         0.49
+  data arrival time                                         -0.28
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.21
+
+
+1

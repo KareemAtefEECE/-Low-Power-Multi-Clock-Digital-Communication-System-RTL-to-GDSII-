@@ -1,0 +1,106 @@
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 01:19:55 2025
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_max (File: /home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db)
+    saed90nm_max_cg (File: /home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db)
+
+
+Operating Conditions: WORST   Library: saed90nm_max
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+SYSTEM_TOP             ForQA             saed90nm_max
+Mux2x1_1               ForQA             saed90nm_max
+Mux2x1_0               ForQA             saed90nm_max
+RST_SYNC_0             ForQA             saed90nm_max
+ClkDiv_0               ForQA             saed90nm_max
+Prescale_mux           ForQA             saed90nm_max
+REG_FILE               ForQA             saed90nm_max
+UART                   ForQA             saed90nm_max
+DATA_SYNC              ForQA             saed90nm_max
+SYS_CTRL               ForQA             saed90nm_max
+CLK_GATE               ForQA             saed90nm_max
+ALU                    ForQA             saed90nm_max
+ASYNC_FIFO             ForQA             saed90nm_max
+PULSE_GEN_0            ForQA             saed90nm_max
+UART_TX                ForQA             saed90nm_max
+UART_RX                ForQA             saed90nm_max
+BIT_SYNC_1_2           ForQA             saed90nm_max
+ALU_DW_div_uns_0       ForQA             saed90nm_max
+FIFO_MEM_CNTRL_DATA_WIDTH8_PTR_WIDTH4_FIFO_DEPTH8 ForQA saed90nm_max
+FIFO_WR_PTR_WIDTH4     ForQA             saed90nm_max
+FIFO_RD_PTR_WIDTH4     ForQA             saed90nm_max
+BIT_SYNC_BUS_WIDTH4_NUM_STAGES2_0 ForQA  saed90nm_max
+serializer             ForQA             saed90nm_max
+controller_fsm         ForQA             saed90nm_max
+parity_calc            ForQA             saed90nm_max
+mux4x1                 ForQA             saed90nm_max
+uart_rx_fsm            ForQA             saed90nm_max
+edge_bit_counter       ForQA             saed90nm_max
+data_sampling          ForQA             saed90nm_max
+deserializer           ForQA             saed90nm_max
+parity_check           ForQA             saed90nm_max
+strt_check             ForQA             saed90nm_max
+stop_check             ForQA             saed90nm_max
+Mux2x1_2               ForQA             saed90nm_max
+Mux2x1_3               ForQA             saed90nm_max
+Mux2x1_4               ForQA             saed90nm_max
+RST_SYNC_1             ForQA             saed90nm_max
+ClkDiv_1               ForQA             saed90nm_max
+PULSE_GEN_1            ForQA             saed90nm_max
+BIT_SYNC_BUS_WIDTH4_NUM_STAGES2_1 ForQA  saed90nm_max
+Mux2x1_5               ForQA             saed90nm_max
+Mux2x1_6               ForQA             saed90nm_max
+ALU_DW01_sub_0         ForQA             saed90nm_max
+ALU_DW01_add_0         ForQA             saed90nm_max
+ClkDiv_1_DW01_inc_0    ForQA             saed90nm_max
+ClkDiv_0_DW01_inc_0    ForQA             saed90nm_max
+ALU_DW02_mult_0        ForQA             saed90nm_max
+ALU_DW01_add_1         ForQA             saed90nm_max
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =   5.6260 uW   (17%)
+  Net Switching Power  =  26.8772 uW   (83%)
+                         ---------
+Total Dynamic Power    =  32.5032 uW  (100%)
+
+Cell Leakage Power     =  97.5032 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      2.5245           24.2527        5.0071e+05           27.2780  (  20.98%)
+register       2.5523e-02        1.1592e-02        2.6707e+07           26.7441  (  20.57%)
+sequential         0.0000            0.0000            0.0000            0.0000  (   0.00%)
+combinational      3.0759            2.6128        7.0296e+07           75.9843  (  58.45%)
+--------------------------------------------------------------------------------------------------
+Total              5.6260 uW        26.8772 uW     9.7503e+07 pW       130.0064 uW
+1

@@ -1,0 +1,13 @@
+4@@2@@SYSTEM_TOP.U0_DATA_SYNC.U0_BIT_SYNC.q[0][0]@@"SYSTEM_TOP.REF_CLK"@@SYSTEM_TOP.U0_UART.U0_RX.fsm_inst.cs[2:0]@@"SYSTEM_TOP.UART_CLK"@@Conventional multi-flop for metastability technique
+4@@2@@SYSTEM_TOP.U0_DATA_SYNC.U0_BIT_SYNC.q[0][0]@@"SYSTEM_TOP.REF_CLK"@@SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err@@"SYSTEM_TOP.UART_CLK"@@Conventional multi-flop for metastability technique
+4@@3@@SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][3:0]@@"SYSTEM_TOP.REF_CLK"@@SYSTEM_TOP.U0_ASYN_FIFO.U0_FIFO_RD.r_ptr[3:0]@@"SYSTEM_TOP.TX_CLK"@@Conventional multi-flop for metastability technique
+4@@6@@SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R.q[0][3:0]@@"SYSTEM_TOP.TX_CLK"@@SYSTEM_TOP.U0_ASYN_FIFO.U0_FIFO_WR.w_ptr[3:0]@@"SYSTEM_TOP.REF_CLK"@@Conventional multi-flop for metastability technique
+3@@2@@1
+3@@3@@0
+3@@3@@0
+3@@3@@0
+3@@3@@0
+3@@6@@1
+3@@6@@1
+3@@6@@1
+3@@6@@1

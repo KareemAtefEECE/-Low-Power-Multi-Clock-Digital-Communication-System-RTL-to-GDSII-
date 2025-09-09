@@ -1,0 +1,2086 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+# ################################## #
+# ============= Setup ============== #
+# ################################## #
+# --- Multi Modes 
+set worst_case "saed90nm_max.db" ; 
+saed90nm_max.db
+set H_worst_case "saed90nm_max_hvt.db"
+saed90nm_max_hvt.db
+set best_case "saed90nm_min.db"
+saed90nm_min.db
+set balanced_case "saed90nm_typ.db" 
+saed90nm_typ.db
+set clk_gating_lib "saed90nm_max_cg.db"
+saed90nm_max_cg.db
+# --- Libraries
+lappend search_path "/home/ICer/Downloads/Lib/synopsys/models"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Downloads/Lib/synopsys/models
+lappend search_path "/home/ICer/Downloads/Lib/synopsys/models/clock_gating"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Downloads/Lib/synopsys/models /home/ICer/Downloads/Lib/synopsys/models/clock_gating
+lappend search_path "/home/ICer/Projects/Digital_System(RTL-to-GDSII)/syn/outputs"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver /home/ICer/Downloads/Lib/synopsys/models /home/ICer/Downloads/Lib/synopsys/models/clock_gating /home/ICer/Projects/Digital_System(RTL-to-GDSII)/syn/outputs
+set_app_var target_library [list $worst_case $best_case $clk_gating_lib] 
+saed90nm_max.db saed90nm_min.db saed90nm_max_cg.db
+set_app_var link_library "* $target_library " 
+* saed90nm_max.db saed90nm_min.db saed90nm_max_cg.db 
+# --- work directory
+sh rm -rf work
+sh mkdir -p work
+define_design_lib work -path ./work ; 
+1
+# --fixes all violations in the design
+set compile_top_all_paths true 
+true
+# --- Define Top Module 
+set design SYSTEM_TOP
+SYSTEM_TOP
+# --- Define Structured Verification Format (SVF) 
+set_svf ${design}.svf 
+1
+# ################################## #
+# =========== Read Design ========== #
+# ################################## #
+read_ddc ${design}.ddc
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_min.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'saed90nm_max'
+  Loading link library 'saed90nm_min'
+  Loading link library 'saed90nm_max_cg'
+  Loading link library 'gtech'
+Reading ddc file '/home/ICer/Projects/Digital_System(RTL-to-GDSII)/syn/outputs/SYSTEM_TOP.ddc'.
+Loaded 48 designs.
+Current design is 'SYSTEM_TOP'.
+SYSTEM_TOP Mux2x1_1 Mux2x1_0 RST_SYNC_0 ClkDiv_0 Prescale_mux REG_FILE UART DATA_SYNC SYS_CTRL CLK_GATE ALU ASYNC_FIFO PULSE_GEN_0 UART_TX UART_RX BIT_SYNC_1_2 ALU_DW_div_uns_0 FIFO_MEM_CNTRL_DATA_WIDTH8_PTR_WIDTH4_FIFO_DEPTH8 FIFO_WR_PTR_WIDTH4 FIFO_RD_PTR_WIDTH4 BIT_SYNC_BUS_WIDTH4_NUM_STAGES2_0 serializer controller_fsm parity_calc mux4x1 uart_rx_fsm edge_bit_counter data_sampling deserializer parity_check strt_check stop_check Mux2x1_2 Mux2x1_3 Mux2x1_4 RST_SYNC_1 ClkDiv_1 PULSE_GEN_1 BIT_SYNC_BUS_WIDTH4_NUM_STAGES2_1 Mux2x1_5 Mux2x1_6 ALU_DW01_sub_0 ALU_DW01_add_0 ClkDiv_1_DW01_inc_0 ClkDiv_0_DW01_inc_0 ALU_DW02_mult_0 ALU_DW01_add_1
+# --- Constraits 
+read_sdc ${design}.sdc
+
+Reading SDC version 2.1...
+Using operating conditions 'WORST' found in library 'saed90nm_max'.
+Using operating conditions 'BEST' found in library 'saed90nm_min'.
+Current design is 'SYSTEM_TOP'.
+Current design is 'SYSTEM_TOP'.
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Clock group ALU_CLK_1 already defines the relationship for the given set of clocks. (TIM-196)
+1
+current_design $design
+Current design is 'SYSTEM_TOP'.
+{SYSTEM_TOP}
+link
+
+  Linking design 'SYSTEM_TOP'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (48 designs)              /home/ICer/Projects/Digital_System(RTL-to-GDSII)/syn/outputs/SYSTEM_TOP.ddc, etc
+  saed90nm_max (library)      /home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db
+  saed90nm_min (library)      /home/ICer/Downloads/Lib/synopsys/models/saed90nm_min.db
+  saed90nm_max_cg (library)   /home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db
+
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Thu Aug 28 04:24:53 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     28
+    Unconnected ports (LINT-28)                                    28
+
+Cells                                                              30
+    Connected to power or ground (LINT-32)                         25
+    Nets connected to multiple pins on same cell (LINT-33)          5
+--------------------------------------------------------------------------------
+
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'divide_by_0' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_rx_fsm', port 'prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_rx_fsm', port 'edge_cnt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_sampling', port 'prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_sampling', port 'edge_cnt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'A[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'TX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[7]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[6]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[5]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[4]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[3]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'mult_42' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'UART_TX', a pin on submodule 'U0_MUX' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'start_bit' is connected to logic 0. 
+Warning: In design 'UART_TX', a pin on submodule 'U0_MUX' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stop_bit' is connected to logic 1. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[13]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', the same net is connected to more than one pin on submodule 'sub_41'. (LINT-33)
+   Net 'n1' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU', the same net is connected to more than one pin on submodule 'add_40'. (LINT-33)
+   Net 'n2' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net 'n13' is connected to pins 'A[13]', 'B[6]''.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net 'n14' is connected to pins 'B[5]', 'B[4]'', 'B[3]', 'B[2]', 'B[1]'.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
+1
+# ################################## #
+# ========== Configuration ========= #
+# ################################## #
+## num of flip flops = 338 so 1 chain for each 100
+set chain_num 4
+4
+set_scan_configuration -chain_count $chain_num -clock_mixing no_mix -style multiplexed_flip_flop -max_length 100
+Accepted scan configuration for modes: all_dft
+1
+########################## Define DFT Signals ##########################
+# scan_clk
+set_dft_signal -view existing_dft -type ScanClock -port SCAN_CLK -timing {45 55}
+Accepted dft signal specification for modes: all_dft
+1
+#scan_rst
+set_dft_signal -view existing_dft -type Reset -port SCAN_RST -active 0
+Accepted dft signal specification for modes: all_dft
+1
+#test_mode
+set_dft_signal -view existing_dft -type TestMode -port TEST_MODE -active 1
+Accepted dft signal specification for modes: all_dft
+1
+# scan_en config
+create_port SCAN_EN -direction in
+Creating port 'SCAN_EN' in design 'SYSTEM_TOP'.
+1
+set_dft_signal -view spec -type ScanEnable -port SCAN_EN -active 1
+Accepted dft signal specification for modes: all_dft
+1
+for {set num 1} {$num < 5} {incr num} {
+
+# scan_in config
+create_port SCAN_IN_$num -direction in
+set_dft_signal -view spec -type ScanDataIn -port SCAN_IN_$num
+
+# scan_out config
+create_port SCAN_OUT_$num -direction out
+set_dft_signal -view spec -type ScanDataOut -port SCAN_OUT_$num
+
+} 
+Creating port 'SCAN_IN_1' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_OUT_1' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_IN_2' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_OUT_2' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_IN_3' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_OUT_3' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_IN_4' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+Creating port 'SCAN_OUT_4' in design 'SYSTEM_TOP'.
+Accepted dft signal specification for modes: all_dft
+# ################################## #
+# =========== Constraints ========== #
+# ################################## #
+source -echo ../cons/cons.tcl 
+##################################################
+# ----- Clock Definations -----  # 
+##################################################
+# --- Budget Clock (Timing Definations)
+create_clock -name SCAN_CLK -period 100 -waveform {0 50}   [get_ports SCAN_CLK]	;  # use it in test mode  (shift, capture )
+# # --- Clock uncertainty Berfore CTS  uncertainty = Jitter + Source Latency  + Network Latency
+# # --- Test_Mode only   >> scan_clk 
+set_clock_uncertainty -setup 1.2  [get_clocks SCAN_CLK]  ;  # Consider Skew + Jitter 
+set_clock_uncertainty -hold  1    [get_clocks SCAN_CLK]  ;  # only Consider Skew   
+# # -- Type of Path IN to Reg >> pesudo as [input_delay =  Tcq + Tpd ] 
+set_output_delay 20 -clock SCAN_CLK [get_ports SCAN_OUT_* ] 
+# # -- Type of Path Reg to Output >> pesudo as [output_delay = Tpd + Tsetup ] 
+set_input_delay 20 -clock SCAN_CLK [get_ports  { SCAN_IN_* SCAN_EN } ] 
+# --- Prevent Tool do any thing on network 
+set_dont_touch_network [get_clocks {SCAN_CLK}]
+set_app_var auto_wire_load_selection false
+##################################################
+# ----- Optimization ---------  # 
+##################################################
+#set_max_capacitance 3.0 [current_design]
+##################################################
+# ----- Interaface  ---------  # 
+##################################################
+# set_driving_cell -lib_cell NBUFFX2 -pin Z [remove_from_collection [all_inputs] [get_ports {fun_clk scan_clk}]];
+set_load 0.5 [all_outputs]
+# Test clock paths timing 
+##################################################
+# ----- Clock groups  ---------  # 
+##################################################
+set_clock_groups -asynchronous -group [get_clocks "ALU_CLK FUN_REF_CLK"] -group [get_clocks "FUN_UART_CLK FUN_RX_CLK FUN_TX_CLK"] -group [get_clocks "SCAN_CLK"]
+set_case_analysis 0 TEST_MODE ;  
+set_case_analysis 0 SCAN_EN ;  
+##################################################
+# ----- Donot use   ---------  # 
+##################################################
+##set_dont_use [get_lib_cells */*INVX0]
+##set_dont_use [get_lib_cells */*DELLN1X2]
+set_dont_use [get_lib_cells */*DELL*]
+1
+# ################################## #
+# ========== Test_Protocol ========= #
+# ################################## #
+# checks for all the dft_signals and the exisiting ones as scan_clk make sure that is connected correct
+create_test_protocol
+In mode: all_dft...
+
+Information: Starting test protocol creation. (TEST-219)
+  ...reading user specified clock signals...
+Information: Identified system/test clock port SCAN_CLK (45.0,55.0). (TEST-265)
+  ...reading user specified asynchronous signals...
+Information: Identified active low asynchronous control port SCAN_RST. (TEST-266)
+Warning: The output strobe for the mode is '40.000000'.
+         The output strobe inferred from the waveform table '_default_WFT_' is -1.000000.
+The output strobe will be updated
+
+1
+# --- To prevent uniquification of your design, enter the command
+set_dft_insertion_configuration -preserve_design_name true  -synthesis_optimization none
+Accepted insert_dft configuration specification.
+1
+# ################################## #
+# ========= Scan-Insertion ========= #
+# ################################## #
+# to avoid any statments in netlist 
+set verilogout_no_tri	 true
+true
+set verilogout_equation  false
+false
+set_fix_multiple_port_nets -all -buffer_constants
+1
+link
+
+  Linking design 'SYSTEM_TOP'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (48 designs)              /home/ICer/Projects/Digital_System(RTL-to-GDSII)/syn/outputs/SYSTEM_TOP.ddc, etc
+  saed90nm_max (library)      /home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db
+  saed90nm_min (library)      /home/ICer/Downloads/Lib/synopsys/models/saed90nm_min.db
+  saed90nm_max_cg (library)   /home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db
+
+1
+dft_drc -verbose
+In mode: all_dft...
+  Pre-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  1 out of 339 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITH VIOLATIONS
+      *   1 cell is a clock gating cell
+         U0_CLK_GATE/U0_CGLPPSX4
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      * 338 cells are valid scan cells
+         RST_SYNC_1/sync_rst_reg[0]
+         RST_SYNC_1/sync_rst_reg[1]
+         RST_SYNC_2/sync_rst_reg[0]
+         RST_SYNC_2/sync_rst_reg[1]
+         TX_CLK_DIV/counter_reg[0]
+         TX_CLK_DIV/counter_reg[6]
+         TX_CLK_DIV/odd_flag_toggle_reg
+         TX_CLK_DIV/counter_reg[5]
+         TX_CLK_DIV/counter_reg[4]
+         TX_CLK_DIV/counter_reg[3]
+         TX_CLK_DIV/counter_reg[2]
+         TX_CLK_DIV/counter_reg[1]
+         TX_CLK_DIV/div_clk_reg
+         RX_CLK_DIV/counter_reg[0]
+         RX_CLK_DIV/counter_reg[6]
+         RX_CLK_DIV/odd_flag_toggle_reg
+         RX_CLK_DIV/counter_reg[5]
+         RX_CLK_DIV/counter_reg[4]
+         RX_CLK_DIV/counter_reg[3]
+         RX_CLK_DIV/counter_reg[2]
+         RX_CLK_DIV/counter_reg[1]
+         RX_CLK_DIV/div_clk_reg
+         U0_REG_FILE/RdData_Valid_reg
+         U0_REG_FILE/RdData_reg[7]
+         U0_REG_FILE/RdData_reg[6]
+         U0_REG_FILE/RdData_reg[5]
+         U0_REG_FILE/RdData_reg[4]
+         U0_REG_FILE/RdData_reg[3]
+         U0_REG_FILE/RdData_reg[2]
+         U0_REG_FILE/RdData_reg[1]
+         U0_REG_FILE/RdData_reg[0]
+         U0_REG_FILE/regfile_reg[15][7]
+         U0_REG_FILE/regfile_reg[15][6]
+         U0_REG_FILE/regfile_reg[15][5]
+         U0_REG_FILE/regfile_reg[15][4]
+         U0_REG_FILE/regfile_reg[15][3]
+         U0_REG_FILE/regfile_reg[15][2]
+         U0_REG_FILE/regfile_reg[15][1]
+         U0_REG_FILE/regfile_reg[15][0]
+         U0_REG_FILE/regfile_reg[14][7]
+         U0_REG_FILE/regfile_reg[14][6]
+         U0_REG_FILE/regfile_reg[14][5]
+         U0_REG_FILE/regfile_reg[14][4]
+         U0_REG_FILE/regfile_reg[14][3]
+         U0_REG_FILE/regfile_reg[14][2]
+         U0_REG_FILE/regfile_reg[14][1]
+         U0_REG_FILE/regfile_reg[14][0]
+         U0_REG_FILE/regfile_reg[13][7]
+         U0_REG_FILE/regfile_reg[13][6]
+         U0_REG_FILE/regfile_reg[13][5]
+         U0_REG_FILE/regfile_reg[13][4]
+         U0_REG_FILE/regfile_reg[13][3]
+         U0_REG_FILE/regfile_reg[13][2]
+         U0_REG_FILE/regfile_reg[13][1]
+         U0_REG_FILE/regfile_reg[13][0]
+         U0_REG_FILE/regfile_reg[12][7]
+         U0_REG_FILE/regfile_reg[12][6]
+         U0_REG_FILE/regfile_reg[12][5]
+         U0_REG_FILE/regfile_reg[12][4]
+         U0_REG_FILE/regfile_reg[12][3]
+         U0_REG_FILE/regfile_reg[12][2]
+         U0_REG_FILE/regfile_reg[12][1]
+         U0_REG_FILE/regfile_reg[12][0]
+         U0_REG_FILE/regfile_reg[11][7]
+         U0_REG_FILE/regfile_reg[11][6]
+         U0_REG_FILE/regfile_reg[11][5]
+         U0_REG_FILE/regfile_reg[11][4]
+         U0_REG_FILE/regfile_reg[11][3]
+         U0_REG_FILE/regfile_reg[11][2]
+         U0_REG_FILE/regfile_reg[11][1]
+         U0_REG_FILE/regfile_reg[11][0]
+         U0_REG_FILE/regfile_reg[10][7]
+         U0_REG_FILE/regfile_reg[10][6]
+         U0_REG_FILE/regfile_reg[10][5]
+         U0_REG_FILE/regfile_reg[10][4]
+         U0_REG_FILE/regfile_reg[10][3]
+         U0_REG_FILE/regfile_reg[10][2]
+         U0_REG_FILE/regfile_reg[10][1]
+         U0_REG_FILE/regfile_reg[10][0]
+         U0_REG_FILE/regfile_reg[9][7]
+         U0_REG_FILE/regfile_reg[9][6]
+         U0_REG_FILE/regfile_reg[9][5]
+         U0_REG_FILE/regfile_reg[9][4]
+         U0_REG_FILE/regfile_reg[9][3]
+         U0_REG_FILE/regfile_reg[9][2]
+         U0_REG_FILE/regfile_reg[9][1]
+         U0_REG_FILE/regfile_reg[9][0]
+         U0_REG_FILE/regfile_reg[8][7]
+         U0_REG_FILE/regfile_reg[8][6]
+         U0_REG_FILE/regfile_reg[8][5]
+         U0_REG_FILE/regfile_reg[8][4]
+         U0_REG_FILE/regfile_reg[8][3]
+         U0_REG_FILE/regfile_reg[8][2]
+         U0_REG_FILE/regfile_reg[8][1]
+         U0_REG_FILE/regfile_reg[8][0]
+         U0_REG_FILE/regfile_reg[7][7]
+         U0_REG_FILE/regfile_reg[7][6]
+         U0_REG_FILE/regfile_reg[7][5]
+         U0_REG_FILE/regfile_reg[7][4]
+         U0_REG_FILE/regfile_reg[7][3]
+         U0_REG_FILE/regfile_reg[7][2]
+         U0_REG_FILE/regfile_reg[7][1]
+         U0_REG_FILE/regfile_reg[7][0]
+         U0_REG_FILE/regfile_reg[6][7]
+         U0_REG_FILE/regfile_reg[6][6]
+         U0_REG_FILE/regfile_reg[6][5]
+         U0_REG_FILE/regfile_reg[6][4]
+         U0_REG_FILE/regfile_reg[6][3]
+         U0_REG_FILE/regfile_reg[6][2]
+         U0_REG_FILE/regfile_reg[6][1]
+         U0_REG_FILE/regfile_reg[6][0]
+         U0_REG_FILE/regfile_reg[5][7]
+         U0_REG_FILE/regfile_reg[5][6]
+         U0_REG_FILE/regfile_reg[5][5]
+         U0_REG_FILE/regfile_reg[5][4]
+         U0_REG_FILE/regfile_reg[5][3]
+         U0_REG_FILE/regfile_reg[5][2]
+         U0_REG_FILE/regfile_reg[5][1]
+         U0_REG_FILE/regfile_reg[5][0]
+         U0_REG_FILE/regfile_reg[4][7]
+         U0_REG_FILE/regfile_reg[4][6]
+         U0_REG_FILE/regfile_reg[4][5]
+         U0_REG_FILE/regfile_reg[4][4]
+         U0_REG_FILE/regfile_reg[4][3]
+         U0_REG_FILE/regfile_reg[4][2]
+         U0_REG_FILE/regfile_reg[4][1]
+         U0_REG_FILE/regfile_reg[4][0]
+         U0_REG_FILE/regfile_reg[3][7]
+         U0_REG_FILE/regfile_reg[3][6]
+         U0_REG_FILE/regfile_reg[3][5]
+         U0_REG_FILE/regfile_reg[3][4]
+         U0_REG_FILE/regfile_reg[3][3]
+         U0_REG_FILE/regfile_reg[3][2]
+         U0_REG_FILE/regfile_reg[3][1]
+         U0_REG_FILE/regfile_reg[3][0]
+         U0_REG_FILE/regfile_reg[2][7]
+         U0_REG_FILE/regfile_reg[2][6]
+         U0_REG_FILE/regfile_reg[2][5]
+         U0_REG_FILE/regfile_reg[2][4]
+         U0_REG_FILE/regfile_reg[2][3]
+         U0_REG_FILE/regfile_reg[2][2]
+         U0_REG_FILE/regfile_reg[2][1]
+         U0_REG_FILE/regfile_reg[2][0]
+         U0_REG_FILE/regfile_reg[1][7]
+         U0_REG_FILE/regfile_reg[1][6]
+         U0_REG_FILE/regfile_reg[1][5]
+         U0_REG_FILE/regfile_reg[1][4]
+         U0_REG_FILE/regfile_reg[1][3]
+         U0_REG_FILE/regfile_reg[1][2]
+         U0_REG_FILE/regfile_reg[1][1]
+         U0_REG_FILE/regfile_reg[0][7]
+         U0_REG_FILE/regfile_reg[0][6]
+         U0_REG_FILE/regfile_reg[0][5]
+         U0_REG_FILE/regfile_reg[0][4]
+         U0_REG_FILE/regfile_reg[0][3]
+         U0_REG_FILE/regfile_reg[0][2]
+         U0_REG_FILE/regfile_reg[0][1]
+         U0_REG_FILE/regfile_reg[0][0]
+         U0_REG_FILE/regfile_reg[1][0]
+         U0_DATA_SYNC/enable_pulse_reg
+         U0_DATA_SYNC/sync_bus_reg[7]
+         U0_DATA_SYNC/sync_bus_reg[6]
+         U0_DATA_SYNC/sync_bus_reg[5]
+         U0_DATA_SYNC/sync_bus_reg[4]
+         U0_DATA_SYNC/sync_bus_reg[3]
+         U0_DATA_SYNC/sync_bus_reg[2]
+         U0_DATA_SYNC/sync_bus_reg[1]
+         U0_DATA_SYNC/sync_bus_reg[0]
+         U0_SYS_CTRL/cs_reg[0]
+         U0_SYS_CTRL/cs_reg[1]
+         U0_SYS_CTRL/stored_addr_reg[3]
+         U0_SYS_CTRL/stored_addr_reg[2]
+         U0_SYS_CTRL/stored_addr_reg[1]
+         U0_SYS_CTRL/stored_addr_reg[0]
+         U0_SYS_CTRL/cs_reg[2]
+         U0_SYS_CTRL/cs_reg[3]
+         U0_ALU/ALU_OUT_reg[8]
+         U0_ALU/ALU_OUT_reg[7]
+         U0_ALU/ALU_OUT_reg[6]
+         U0_ALU/ALU_OUT_reg[5]
+         U0_ALU/ALU_OUT_reg[4]
+         U0_ALU/ALU_OUT_reg[3]
+         U0_ALU/ALU_OUT_reg[2]
+         U0_ALU/ALU_OUT_reg[1]
+         U0_ALU/ALU_OUT_reg[0]
+         U0_ALU/OUT_VALID_reg
+         U0_ALU/ALU_OUT_reg[14]
+         U0_ALU/ALU_OUT_reg[10]
+         U0_ALU/ALU_OUT_reg[9]
+         U0_ALU/ALU_OUT_reg[13]
+         U0_ALU/ALU_OUT_reg[12]
+         U0_ALU/ALU_OUT_reg[11]
+         U0_ALU/ALU_OUT_reg[15]
+         U0_PULSE_GEN/SYNC_REG_reg
+         U0_DATA_SYNC/U0_BIT_SYNC/q_reg[0][0]
+         U0_DATA_SYNC/U0_BIT_SYNC/q_reg[1][0]
+         U0_DATA_SYNC/U0_PULSE_GEN/SYNC_REG_reg
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][5]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[0]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[1]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[2]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[3]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[0]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[1]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[2]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[3]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][2]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][0]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][0]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][3]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][2]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][1]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][0]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][3]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][2]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][1]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][0]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[5]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[4]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[3]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[2]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[1]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[0]
+         U0_UART/U0_TX/U0_SER/counter_reg[0]
+         U0_UART/U0_TX/U0_SER/counter_reg[1]
+         U0_UART/U0_TX/U0_SER/counter_reg[2]
+         U0_UART/U0_TX/U0_FSM/cs_reg[0]
+         U0_UART/U0_TX/U0_FSM/cs_reg[2]
+         U0_UART/U0_TX/U0_FSM/cs_reg[1]
+         U0_UART/U0_TX/U0_FSM/busy_reg
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[7]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[6]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[5]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[4]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[3]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[1]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0]
+         U0_UART/U0_TX/U0_PARITY_CALC/par_bit_reg
+         U0_UART/U0_TX/U0_MUX/TX_OUT_reg
+         U0_UART/U0_RX/fsm_inst/cs_reg[0]
+         U0_UART/U0_RX/fsm_inst/cs_reg[2]
+         U0_UART/U0_RX/fsm_inst/cs_reg[1]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[0]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[5]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[4]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[3]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[2]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[1]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[0]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[1]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[2]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[3]
+         U0_UART/U0_RX/samp_inst/samples_reg[2]
+         U0_UART/U0_RX/samp_inst/samples_reg[1]
+         U0_UART/U0_RX/samp_inst/samples_reg[0]
+         U0_UART/U0_RX/samp_inst/sampled_bit_reg
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[7]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[6]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[5]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[4]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[3]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[2]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[1]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[0]
+         U0_UART/U0_RX/par_chk_inst/par_err_reg
+         U0_UART/U0_RX/strt_chk_inst/strt_glitch_reg
+         U0_UART/U0_RX/stp_chk_inst/stp_err_reg
+
+Information: Test design rule checking completed. (TEST-123)
+1
+compile -scan -map_effort high  -incremental_mapping  
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 67 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition WORST set on design SYSTEM_TOP has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed90nm_min is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting implementations
+  Selecting implementations
+  Selecting implementations
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX2' has scan pins. (OPT-1209)
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX1' has scan pins. (OPT-1209)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01   30198.1      0.33      18.0       0.1                          
+    0:00:01   30198.1      0.33      18.0       0.1                          
+    0:00:01   30198.1      0.33      18.0       0.1                          
+    0:00:01   30198.1      0.33      18.0       0.1                          
+    0:00:01   30198.1      0.33      18.0       0.1                          
+    0:00:01   29605.5      0.33       5.1       0.0                          
+    0:00:01   29486.6      0.34       5.3       0.0                          
+    0:00:01   29459.9      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:01   29455.3      0.34       5.3       0.0                          
+    0:00:02   29519.8      0.28       2.1       0.0 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][4]/D
+    0:00:02   29526.2      0.28       1.7       0.0 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][0]/D
+    0:00:02   29540.0      0.28       1.7       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02   29540.0      0.28       1.7       0.0                          
+    0:00:02   29565.8      0.23       1.4       0.0 U0_ALU/ALU_OUT_reg[0]/D  
+    0:00:02   29564.0      0.18       1.3       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   29570.5      0.15       0.9       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   29604.6      0.13       0.5       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   29610.1      0.12       0.5       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:03   29688.4      0.10       0.3       0.0                          
+    0:00:03   29685.7      0.07       0.2       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:05   29741.9      0.06       0.2       0.0                          
+    0:00:05   29741.0      0.04       0.1       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:05   29741.0      0.04       0.1       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:07   29746.5      0.04       0.0       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:08   29767.7      0.02       0.0       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:08   29776.0      0.00       0.0       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:08   29762.2      0.00       0.0       0.0                          
+    0:00:08   29762.2      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:08   29762.2      0.00       0.0       0.0                          
+    0:00:08   29762.2      0.00       0.0       0.0                          
+    0:00:08   29570.5      0.19       6.2       0.0                          
+    0:00:08   29560.3      0.19       6.2       0.0                          
+    0:00:08   29560.3      0.19       6.2       0.0                          
+    0:00:08   29560.3      0.19       6.2       0.0                          
+    0:00:08   29583.4      0.00       0.0       0.0 U0_REG_FILE/regfile_reg[1][4]/D
+    0:00:08   29532.7      0.00       0.0       0.0                          
+    0:00:09   29499.5      0.00       0.0       0.0                          
+    0:00:09   29494.0      0.00       0.0       0.0                          
+    0:00:09   29494.0      0.00       0.0       0.0                          
+    0:00:09   29438.7      0.06       0.1       0.0                          
+    0:00:09   29421.2      0.06       0.1       0.0                          
+    0:00:09   29404.6      0.06       0.1       0.0                          
+    0:00:09   29376.9      0.09       0.1       0.0                          
+    0:00:10   29349.3      0.09       0.1       0.0                          
+    0:00:10   29334.5      0.09       0.1       0.0                          
+    0:00:10   29334.5      0.09       0.1       0.0                          
+    0:00:10   29334.5      0.09       0.1       0.0                          
+    0:00:10   29171.4      0.11       1.2       0.0                          
+    0:00:10   29137.3      0.14       1.4       0.0                          
+    0:00:10   29137.3      0.14       1.4       0.0                          
+    0:00:10   29137.3      0.14       1.4       0.0                          
+    0:00:10   29137.3      0.14       1.4       0.0                          
+    0:00:10   29137.3      0.14       1.4       0.0                          
+    0:00:10   29137.3      0.14       1.4       0.0                          
+    0:00:10   29187.1      0.06       0.2       0.0 U0_ALU/ALU_OUT_reg[0]/D  
+    0:00:10   29202.7      0.04       0.2       0.0 U0_ALU/ALU_OUT_reg[0]/D  
+    0:00:10   29224.9      0.02       0.0       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:10   29226.7      0.02       0.0       0.0 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:10   29228.5      0.02       0.0       0.0                          
+    0:00:10   29227.6      0.01       0.0       0.0                          
+    0:00:10   29233.2      0.01       0.0       0.0                          
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_min.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Thu Aug 28 04:25:06 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     37
+    Unconnected ports (LINT-28)                                    37
+
+Cells                                                              30
+    Connected to power or ground (LINT-32)                         25
+    Nets connected to multiple pins on same cell (LINT-33)          5
+--------------------------------------------------------------------------------
+
+Warning: In design 'SYSTEM_TOP', port 'SCAN_EN' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_IN_1' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_OUT_1' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_IN_2' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_OUT_2' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_IN_3' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_OUT_3' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_IN_4' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', port 'SCAN_OUT_4' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'divide_by_0' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_rx_fsm', port 'prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_rx_fsm', port 'edge_cnt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_sampling', port 'prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_sampling', port 'edge_cnt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'A[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'TX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[7]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[6]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[5]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[4]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[3]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'mult_42' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'UART_TX', a pin on submodule 'U0_MUX' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'start_bit' is connected to logic 0. 
+Warning: In design 'UART_TX', a pin on submodule 'U0_MUX' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stop_bit' is connected to logic 1. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[13]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', the same net is connected to more than one pin on submodule 'sub_41'. (LINT-33)
+   Net 'n1' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU', the same net is connected to more than one pin on submodule 'add_40'. (LINT-33)
+   Net 'n2' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net 'n13' is connected to pins 'A[13]', 'B[6]''.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net 'n14' is connected to pins 'B[5]', 'B[4]'', 'B[3]', 'B[2]', 'B[1]'.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
+1
+# ################################## #
+# =============== DRC ============== #
+# ################################## #
+dft_drc -verbose
+In mode: all_dft...
+  Pre-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  1 out of 339 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITH VIOLATIONS
+      *   1 cell is a clock gating cell
+         U0_CLK_GATE/U0_CGLPPSX4
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      * 338 cells are valid scan cells
+         RST_SYNC_1/sync_rst_reg[0]
+         RST_SYNC_1/sync_rst_reg[1]
+         TX_CLK_DIV/counter_reg[0]
+         TX_CLK_DIV/counter_reg[6]
+         TX_CLK_DIV/odd_flag_toggle_reg
+         TX_CLK_DIV/counter_reg[5]
+         TX_CLK_DIV/counter_reg[4]
+         TX_CLK_DIV/counter_reg[3]
+         TX_CLK_DIV/counter_reg[2]
+         TX_CLK_DIV/counter_reg[1]
+         TX_CLK_DIV/div_clk_reg
+         RX_CLK_DIV/counter_reg[0]
+         RX_CLK_DIV/counter_reg[6]
+         RX_CLK_DIV/odd_flag_toggle_reg
+         RX_CLK_DIV/counter_reg[5]
+         RX_CLK_DIV/counter_reg[4]
+         RX_CLK_DIV/counter_reg[3]
+         RX_CLK_DIV/counter_reg[2]
+         RX_CLK_DIV/counter_reg[1]
+         RX_CLK_DIV/div_clk_reg
+         U0_REG_FILE/RdData_Valid_reg
+         U0_REG_FILE/RdData_reg[7]
+         U0_REG_FILE/RdData_reg[6]
+         U0_REG_FILE/RdData_reg[5]
+         U0_REG_FILE/RdData_reg[4]
+         U0_REG_FILE/RdData_reg[3]
+         U0_REG_FILE/RdData_reg[2]
+         U0_REG_FILE/RdData_reg[1]
+         U0_REG_FILE/RdData_reg[0]
+         U0_REG_FILE/regfile_reg[15][7]
+         U0_REG_FILE/regfile_reg[15][6]
+         U0_REG_FILE/regfile_reg[15][5]
+         U0_REG_FILE/regfile_reg[15][4]
+         U0_REG_FILE/regfile_reg[15][3]
+         U0_REG_FILE/regfile_reg[15][2]
+         U0_REG_FILE/regfile_reg[15][1]
+         U0_REG_FILE/regfile_reg[15][0]
+         U0_REG_FILE/regfile_reg[14][7]
+         U0_REG_FILE/regfile_reg[14][6]
+         U0_REG_FILE/regfile_reg[13][7]
+         U0_REG_FILE/regfile_reg[13][6]
+         U0_REG_FILE/regfile_reg[13][5]
+         U0_REG_FILE/regfile_reg[13][4]
+         U0_REG_FILE/regfile_reg[13][3]
+         U0_REG_FILE/regfile_reg[13][2]
+         U0_REG_FILE/regfile_reg[13][1]
+         U0_REG_FILE/regfile_reg[13][0]
+         U0_REG_FILE/regfile_reg[12][5]
+         U0_REG_FILE/regfile_reg[12][4]
+         U0_REG_FILE/regfile_reg[11][7]
+         U0_REG_FILE/regfile_reg[11][6]
+         U0_REG_FILE/regfile_reg[11][5]
+         U0_REG_FILE/regfile_reg[11][4]
+         U0_REG_FILE/regfile_reg[11][3]
+         U0_REG_FILE/regfile_reg[11][2]
+         U0_REG_FILE/regfile_reg[11][1]
+         U0_REG_FILE/regfile_reg[11][0]
+         U0_REG_FILE/regfile_reg[10][3]
+         U0_REG_FILE/regfile_reg[10][2]
+         U0_REG_FILE/regfile_reg[9][7]
+         U0_REG_FILE/regfile_reg[9][6]
+         U0_REG_FILE/regfile_reg[9][5]
+         U0_REG_FILE/regfile_reg[9][4]
+         U0_REG_FILE/regfile_reg[9][3]
+         U0_REG_FILE/regfile_reg[9][2]
+         U0_REG_FILE/regfile_reg[9][1]
+         U0_REG_FILE/regfile_reg[9][0]
+         U0_REG_FILE/regfile_reg[8][7]
+         U0_REG_FILE/regfile_reg[8][6]
+         U0_REG_FILE/regfile_reg[8][5]
+         U0_REG_FILE/regfile_reg[8][4]
+         U0_REG_FILE/regfile_reg[8][3]
+         U0_REG_FILE/regfile_reg[8][2]
+         U0_REG_FILE/regfile_reg[8][1]
+         U0_REG_FILE/regfile_reg[8][0]
+         U0_REG_FILE/regfile_reg[7][7]
+         U0_REG_FILE/regfile_reg[7][6]
+         U0_REG_FILE/regfile_reg[7][5]
+         U0_REG_FILE/regfile_reg[7][4]
+         U0_REG_FILE/regfile_reg[7][3]
+         U0_REG_FILE/regfile_reg[7][2]
+         U0_REG_FILE/regfile_reg[7][1]
+         U0_REG_FILE/regfile_reg[7][0]
+         U0_REG_FILE/regfile_reg[6][7]
+         U0_REG_FILE/regfile_reg[6][6]
+         U0_REG_FILE/regfile_reg[6][5]
+         U0_REG_FILE/regfile_reg[6][4]
+         U0_REG_FILE/regfile_reg[6][3]
+         U0_REG_FILE/regfile_reg[6][2]
+         U0_REG_FILE/regfile_reg[6][1]
+         U0_REG_FILE/regfile_reg[6][0]
+         U0_REG_FILE/regfile_reg[5][7]
+         U0_REG_FILE/regfile_reg[5][6]
+         U0_REG_FILE/regfile_reg[5][5]
+         U0_REG_FILE/regfile_reg[5][4]
+         U0_REG_FILE/regfile_reg[5][3]
+         U0_REG_FILE/regfile_reg[5][2]
+         U0_REG_FILE/regfile_reg[5][1]
+         U0_REG_FILE/regfile_reg[5][0]
+         U0_REG_FILE/regfile_reg[4][7]
+         U0_REG_FILE/regfile_reg[4][6]
+         U0_REG_FILE/regfile_reg[4][5]
+         U0_REG_FILE/regfile_reg[4][4]
+         U0_REG_FILE/regfile_reg[4][3]
+         U0_REG_FILE/regfile_reg[4][2]
+         U0_REG_FILE/regfile_reg[4][1]
+         U0_REG_FILE/regfile_reg[4][0]
+         U0_REG_FILE/regfile_reg[3][7]
+         U0_REG_FILE/regfile_reg[3][6]
+         U0_REG_FILE/regfile_reg[3][5]
+         U0_REG_FILE/regfile_reg[3][4]
+         U0_REG_FILE/regfile_reg[3][3]
+         U0_REG_FILE/regfile_reg[3][2]
+         U0_REG_FILE/regfile_reg[3][1]
+         U0_REG_FILE/regfile_reg[3][0]
+         U0_REG_FILE/regfile_reg[2][7]
+         U0_REG_FILE/regfile_reg[2][6]
+         U0_REG_FILE/regfile_reg[2][5]
+         U0_REG_FILE/regfile_reg[2][4]
+         U0_REG_FILE/regfile_reg[2][3]
+         U0_REG_FILE/regfile_reg[2][2]
+         U0_REG_FILE/regfile_reg[2][1]
+         U0_REG_FILE/regfile_reg[2][0]
+         U0_REG_FILE/regfile_reg[1][7]
+         U0_REG_FILE/regfile_reg[1][6]
+         U0_REG_FILE/regfile_reg[1][5]
+         U0_REG_FILE/regfile_reg[1][4]
+         U0_REG_FILE/regfile_reg[1][3]
+         U0_REG_FILE/regfile_reg[1][2]
+         U0_REG_FILE/regfile_reg[1][1]
+         U0_REG_FILE/regfile_reg[0][7]
+         U0_REG_FILE/regfile_reg[0][6]
+         U0_REG_FILE/regfile_reg[0][5]
+         U0_REG_FILE/regfile_reg[0][4]
+         U0_REG_FILE/regfile_reg[0][3]
+         U0_REG_FILE/regfile_reg[0][2]
+         U0_REG_FILE/regfile_reg[0][1]
+         U0_REG_FILE/regfile_reg[0][0]
+         U0_REG_FILE/regfile_reg[1][0]
+         U0_REG_FILE/regfile_reg[14][5]
+         U0_REG_FILE/regfile_reg[12][7]
+         U0_REG_FILE/regfile_reg[12][6]
+         U0_REG_FILE/regfile_reg[14][1]
+         U0_REG_FILE/regfile_reg[14][0]
+         U0_REG_FILE/regfile_reg[12][1]
+         U0_REG_FILE/regfile_reg[12][0]
+         U0_REG_FILE/regfile_reg[14][2]
+         U0_REG_FILE/regfile_reg[12][2]
+         U0_REG_FILE/regfile_reg[14][4]
+         U0_REG_FILE/regfile_reg[14][3]
+         U0_REG_FILE/regfile_reg[12][3]
+         U0_REG_FILE/regfile_reg[10][6]
+         U0_REG_FILE/regfile_reg[10][7]
+         U0_REG_FILE/regfile_reg[10][5]
+         U0_REG_FILE/regfile_reg[10][1]
+         U0_REG_FILE/regfile_reg[10][0]
+         U0_REG_FILE/regfile_reg[10][4]
+         U0_DATA_SYNC/enable_pulse_reg
+         U0_DATA_SYNC/sync_bus_reg[7]
+         U0_DATA_SYNC/sync_bus_reg[6]
+         U0_DATA_SYNC/sync_bus_reg[5]
+         U0_DATA_SYNC/sync_bus_reg[4]
+         U0_DATA_SYNC/sync_bus_reg[3]
+         U0_DATA_SYNC/sync_bus_reg[2]
+         U0_DATA_SYNC/sync_bus_reg[1]
+         U0_DATA_SYNC/sync_bus_reg[0]
+         U0_SYS_CTRL/cs_reg[0]
+         U0_SYS_CTRL/cs_reg[1]
+         U0_SYS_CTRL/stored_addr_reg[0]
+         U0_SYS_CTRL/cs_reg[2]
+         U0_SYS_CTRL/cs_reg[3]
+         U0_SYS_CTRL/stored_addr_reg[1]
+         U0_SYS_CTRL/stored_addr_reg[2]
+         U0_SYS_CTRL/stored_addr_reg[3]
+         U0_ALU/ALU_OUT_reg[8]
+         U0_ALU/ALU_OUT_reg[7]
+         U0_ALU/ALU_OUT_reg[6]
+         U0_ALU/ALU_OUT_reg[5]
+         U0_ALU/ALU_OUT_reg[4]
+         U0_ALU/ALU_OUT_reg[2]
+         U0_ALU/OUT_VALID_reg
+         U0_ALU/ALU_OUT_reg[14]
+         U0_ALU/ALU_OUT_reg[10]
+         U0_ALU/ALU_OUT_reg[9]
+         U0_ALU/ALU_OUT_reg[13]
+         U0_ALU/ALU_OUT_reg[12]
+         U0_ALU/ALU_OUT_reg[11]
+         U0_ALU/ALU_OUT_reg[3]
+         U0_ALU/ALU_OUT_reg[1]
+         U0_ALU/ALU_OUT_reg[15]
+         U0_ALU/ALU_OUT_reg[0]
+         U0_PULSE_GEN/SYNC_REG_reg
+         U0_DATA_SYNC/U0_BIT_SYNC/q_reg[0][0]
+         U0_DATA_SYNC/U0_BIT_SYNC/q_reg[1][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][7]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][6]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][4]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][2]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][5]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][1]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][3]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][0]
+         U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][4]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[0]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[1]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[2]
+         U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[3]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[0]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[1]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[2]
+         U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[3]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][2]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][0]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1]
+         U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][0]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][3]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][2]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][1]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][0]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][3]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][2]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][1]
+         U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][0]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[5]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[4]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[3]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[2]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[1]
+         U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[0]
+         U0_UART/U0_TX/U0_SER/counter_reg[0]
+         U0_UART/U0_TX/U0_SER/counter_reg[1]
+         U0_UART/U0_TX/U0_SER/counter_reg[2]
+         U0_UART/U0_TX/U0_FSM/cs_reg[0]
+         U0_UART/U0_TX/U0_FSM/cs_reg[2]
+         U0_UART/U0_TX/U0_FSM/cs_reg[1]
+         U0_UART/U0_TX/U0_FSM/busy_reg
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[7]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[6]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[5]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[4]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[3]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[1]
+         U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0]
+         U0_UART/U0_TX/U0_PARITY_CALC/par_bit_reg
+         U0_UART/U0_TX/U0_MUX/TX_OUT_reg
+         U0_UART/U0_RX/fsm_inst/cs_reg[0]
+         U0_UART/U0_RX/fsm_inst/cs_reg[2]
+         U0_UART/U0_RX/fsm_inst/cs_reg[1]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[0]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[5]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[4]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[3]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[2]
+         U0_UART/U0_RX/counter_inst/edge_cnt_reg[1]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[0]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[1]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[2]
+         U0_UART/U0_RX/counter_inst/bit_cnt_reg[3]
+         U0_UART/U0_RX/samp_inst/samples_reg[2]
+         U0_UART/U0_RX/samp_inst/samples_reg[1]
+         U0_UART/U0_RX/samp_inst/samples_reg[0]
+         U0_UART/U0_RX/samp_inst/sampled_bit_reg
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[7]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[6]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[5]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[4]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[3]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[2]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[1]
+         U0_UART/U0_RX/deser_inst/P_DATA_reg[0]
+         U0_UART/U0_RX/par_chk_inst/par_err_reg
+         U0_UART/U0_RX/strt_chk_inst/strt_glitch_reg
+         U0_UART/U0_RX/stp_chk_inst/stp_err_reg
+         U0_DATA_SYNC/U0_PULSE_GEN/SYNC_REG_reg
+         RST_SYNC_2/sync_rst_reg[0]
+         RST_SYNC_2/sync_rst_reg[1]
+
+Information: Test design rule checking completed. (TEST-123)
+1
+preview_dft -show all
+  Information: Using test design rule information from previous dft_drc run.
+  Architecting Scan Chains
+
+****************************************
+Preview_dft report
+For    : 'Insert_dft' command
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 04:25:08 2025
+****************************************
+
+Number of chains: 4
+Scan methodology: full_scan
+Scan style: multiplexed_flip_flop
+Clock domain: no_mix
+Scan enable: SCAN_EN (no hookup pin)
+
+  (l) shows cell scan-out drives a lockup latch
+  (s) shows cell is a scan segment
+  (t) shows cell has a true scan attribute
+  (w) shows cell scan-out drives a wire
+
+
+Scan chain '1' (SCAN_IN_1 --> SCAN_OUT_1) contains 85 cells:
+
+  RST_SYNC_1/sync_rst_reg[0]    (SCAN_CLK, 45.0, rising) 
+  RST_SYNC_1/sync_rst_reg[1]    
+  RST_SYNC_2/sync_rst_reg[0]    
+  RST_SYNC_2/sync_rst_reg[1]    
+  RX_CLK_DIV/counter_reg[0]     
+  RX_CLK_DIV/counter_reg[1]     
+  RX_CLK_DIV/counter_reg[2]     
+  RX_CLK_DIV/counter_reg[3]     
+  RX_CLK_DIV/counter_reg[4]     
+  RX_CLK_DIV/counter_reg[5]     
+  RX_CLK_DIV/counter_reg[6]     
+  RX_CLK_DIV/div_clk_reg        
+  RX_CLK_DIV/odd_flag_toggle_reg
+  TX_CLK_DIV/counter_reg[0]     
+  TX_CLK_DIV/counter_reg[1]     
+  TX_CLK_DIV/counter_reg[2]     
+  TX_CLK_DIV/counter_reg[3]     
+  TX_CLK_DIV/counter_reg[4]     
+  TX_CLK_DIV/counter_reg[5]     
+  TX_CLK_DIV/counter_reg[6]     
+  TX_CLK_DIV/div_clk_reg        
+  TX_CLK_DIV/odd_flag_toggle_reg
+  U0_ALU/ALU_OUT_reg[0]         
+  U0_ALU/ALU_OUT_reg[1]         
+  U0_ALU/ALU_OUT_reg[2]         
+  U0_ALU/ALU_OUT_reg[3]         
+  U0_ALU/ALU_OUT_reg[4]         
+  U0_ALU/ALU_OUT_reg[5]         
+  U0_ALU/ALU_OUT_reg[6]         
+  U0_ALU/ALU_OUT_reg[7]         
+  U0_ALU/ALU_OUT_reg[8]         
+  U0_ALU/ALU_OUT_reg[9]         
+  U0_ALU/ALU_OUT_reg[10]        
+  U0_ALU/ALU_OUT_reg[11]        
+  U0_ALU/ALU_OUT_reg[12]        
+  U0_ALU/ALU_OUT_reg[13]        
+  U0_ALU/ALU_OUT_reg[14]        
+  U0_ALU/ALU_OUT_reg[15]        
+  U0_ALU/OUT_VALID_reg          
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][5]
+
+  Scan signals:
+    test_scan_in: SCAN_IN_1 (no hookup pin)
+    test_scan_out: SCAN_OUT_1 (no hookup pin)
+
+
+Scan chain '2' (SCAN_IN_2 --> SCAN_OUT_2) contains 85 cells:
+
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][6] (SCAN_CLK, 45.0, rising) 
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][7]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][0]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][1]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][2]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][3]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][4]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][5]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][6]
+  U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][7]
+  U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[0]
+  U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[1]
+  U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[2]
+  U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[3]
+  U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[0]
+  U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[1]
+  U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[2]
+  U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[3]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][0]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][2]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][0]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2]
+  U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][0]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][1]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][2]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][3]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][0]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][1]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][2]
+  U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][3]
+  U0_DATA_SYNC/U0_BIT_SYNC/q_reg[0][0]
+  U0_DATA_SYNC/U0_BIT_SYNC/q_reg[1][0]
+  U0_DATA_SYNC/U0_PULSE_GEN/SYNC_REG_reg
+  U0_DATA_SYNC/enable_pulse_reg 
+  U0_DATA_SYNC/sync_bus_reg[0]  
+  U0_DATA_SYNC/sync_bus_reg[1]  
+  U0_DATA_SYNC/sync_bus_reg[2]  
+  U0_DATA_SYNC/sync_bus_reg[3]  
+  U0_DATA_SYNC/sync_bus_reg[4]  
+  U0_DATA_SYNC/sync_bus_reg[5]  
+  U0_DATA_SYNC/sync_bus_reg[6]  
+  U0_DATA_SYNC/sync_bus_reg[7]  
+  U0_PULSE_GEN/SYNC_REG_reg     
+  U0_REG_FILE/RdData_Valid_reg  
+  U0_REG_FILE/RdData_reg[0]     
+  U0_REG_FILE/RdData_reg[1]     
+  U0_REG_FILE/RdData_reg[2]     
+  U0_REG_FILE/RdData_reg[3]     
+  U0_REG_FILE/RdData_reg[4]     
+  U0_REG_FILE/RdData_reg[5]     
+  U0_REG_FILE/RdData_reg[6]     
+  U0_REG_FILE/RdData_reg[7]     
+  U0_REG_FILE/regfile_reg[0][0] 
+  U0_REG_FILE/regfile_reg[0][1] 
+  U0_REG_FILE/regfile_reg[0][2] 
+  U0_REG_FILE/regfile_reg[0][3] 
+  U0_REG_FILE/regfile_reg[0][4] 
+  U0_REG_FILE/regfile_reg[0][5] 
+  U0_REG_FILE/regfile_reg[0][6] 
+  U0_REG_FILE/regfile_reg[0][7] 
+  U0_REG_FILE/regfile_reg[1][0] 
+  U0_REG_FILE/regfile_reg[1][1] 
+  U0_REG_FILE/regfile_reg[1][2] 
+  U0_REG_FILE/regfile_reg[1][3] 
+  U0_REG_FILE/regfile_reg[1][4] 
+  U0_REG_FILE/regfile_reg[1][5] 
+  U0_REG_FILE/regfile_reg[1][6] 
+  U0_REG_FILE/regfile_reg[1][7] 
+  U0_REG_FILE/regfile_reg[2][0] 
+  U0_REG_FILE/regfile_reg[2][1] 
+  U0_REG_FILE/regfile_reg[2][2] 
+  U0_REG_FILE/regfile_reg[2][3] 
+  U0_REG_FILE/regfile_reg[2][4] 
+
+  Scan signals:
+    test_scan_in: SCAN_IN_2 (no hookup pin)
+    test_scan_out: SCAN_OUT_2 (no hookup pin)
+
+
+Scan chain '3' (SCAN_IN_3 --> SCAN_OUT_3) contains 84 cells:
+
+  U0_REG_FILE/regfile_reg[2][5] (SCAN_CLK, 45.0, rising) 
+  U0_REG_FILE/regfile_reg[2][6] 
+  U0_REG_FILE/regfile_reg[2][7] 
+  U0_REG_FILE/regfile_reg[3][0] 
+  U0_REG_FILE/regfile_reg[3][1] 
+  U0_REG_FILE/regfile_reg[3][2] 
+  U0_REG_FILE/regfile_reg[3][3] 
+  U0_REG_FILE/regfile_reg[3][4] 
+  U0_REG_FILE/regfile_reg[3][5] 
+  U0_REG_FILE/regfile_reg[3][6] 
+  U0_REG_FILE/regfile_reg[3][7] 
+  U0_REG_FILE/regfile_reg[4][0] 
+  U0_REG_FILE/regfile_reg[4][1] 
+  U0_REG_FILE/regfile_reg[4][2] 
+  U0_REG_FILE/regfile_reg[4][3] 
+  U0_REG_FILE/regfile_reg[4][4] 
+  U0_REG_FILE/regfile_reg[4][5] 
+  U0_REG_FILE/regfile_reg[4][6] 
+  U0_REG_FILE/regfile_reg[4][7] 
+  U0_REG_FILE/regfile_reg[5][0] 
+  U0_REG_FILE/regfile_reg[5][1] 
+  U0_REG_FILE/regfile_reg[5][2] 
+  U0_REG_FILE/regfile_reg[5][3] 
+  U0_REG_FILE/regfile_reg[5][4] 
+  U0_REG_FILE/regfile_reg[5][5] 
+  U0_REG_FILE/regfile_reg[5][6] 
+  U0_REG_FILE/regfile_reg[5][7] 
+  U0_REG_FILE/regfile_reg[6][0] 
+  U0_REG_FILE/regfile_reg[6][1] 
+  U0_REG_FILE/regfile_reg[6][2] 
+  U0_REG_FILE/regfile_reg[6][3] 
+  U0_REG_FILE/regfile_reg[6][4] 
+  U0_REG_FILE/regfile_reg[6][5] 
+  U0_REG_FILE/regfile_reg[6][6] 
+  U0_REG_FILE/regfile_reg[6][7] 
+  U0_REG_FILE/regfile_reg[7][0] 
+  U0_REG_FILE/regfile_reg[7][1] 
+  U0_REG_FILE/regfile_reg[7][2] 
+  U0_REG_FILE/regfile_reg[7][3] 
+  U0_REG_FILE/regfile_reg[7][4] 
+  U0_REG_FILE/regfile_reg[7][5] 
+  U0_REG_FILE/regfile_reg[7][6] 
+  U0_REG_FILE/regfile_reg[7][7] 
+  U0_REG_FILE/regfile_reg[8][0] 
+  U0_REG_FILE/regfile_reg[8][1] 
+  U0_REG_FILE/regfile_reg[8][2] 
+  U0_REG_FILE/regfile_reg[8][3] 
+  U0_REG_FILE/regfile_reg[8][4] 
+  U0_REG_FILE/regfile_reg[8][5] 
+  U0_REG_FILE/regfile_reg[8][6] 
+  U0_REG_FILE/regfile_reg[8][7] 
+  U0_REG_FILE/regfile_reg[9][0] 
+  U0_REG_FILE/regfile_reg[9][1] 
+  U0_REG_FILE/regfile_reg[9][2] 
+  U0_REG_FILE/regfile_reg[9][3] 
+  U0_REG_FILE/regfile_reg[9][4] 
+  U0_REG_FILE/regfile_reg[9][5] 
+  U0_REG_FILE/regfile_reg[9][6] 
+  U0_REG_FILE/regfile_reg[9][7] 
+  U0_REG_FILE/regfile_reg[10][0]
+  U0_REG_FILE/regfile_reg[10][1]
+  U0_REG_FILE/regfile_reg[10][2]
+  U0_REG_FILE/regfile_reg[10][3]
+  U0_REG_FILE/regfile_reg[10][4]
+  U0_REG_FILE/regfile_reg[10][5]
+  U0_REG_FILE/regfile_reg[10][6]
+  U0_REG_FILE/regfile_reg[10][7]
+  U0_REG_FILE/regfile_reg[11][0]
+  U0_REG_FILE/regfile_reg[11][1]
+  U0_REG_FILE/regfile_reg[11][2]
+  U0_REG_FILE/regfile_reg[11][3]
+  U0_REG_FILE/regfile_reg[11][4]
+  U0_REG_FILE/regfile_reg[11][5]
+  U0_REG_FILE/regfile_reg[11][6]
+  U0_REG_FILE/regfile_reg[11][7]
+  U0_REG_FILE/regfile_reg[12][0]
+  U0_REG_FILE/regfile_reg[12][1]
+  U0_REG_FILE/regfile_reg[12][2]
+  U0_REG_FILE/regfile_reg[12][3]
+  U0_REG_FILE/regfile_reg[12][4]
+  U0_REG_FILE/regfile_reg[12][5]
+  U0_REG_FILE/regfile_reg[12][6]
+  U0_REG_FILE/regfile_reg[12][7]
+  U0_REG_FILE/regfile_reg[13][0]
+
+  Scan signals:
+    test_scan_in: SCAN_IN_3 (no hookup pin)
+    test_scan_out: SCAN_OUT_3 (no hookup pin)
+
+
+Scan chain '4' (SCAN_IN_4 --> SCAN_OUT_4) contains 84 cells:
+
+  U0_REG_FILE/regfile_reg[13][1] (SCAN_CLK, 45.0, rising) 
+  U0_REG_FILE/regfile_reg[13][2]
+  U0_REG_FILE/regfile_reg[13][3]
+  U0_REG_FILE/regfile_reg[13][4]
+  U0_REG_FILE/regfile_reg[13][5]
+  U0_REG_FILE/regfile_reg[13][6]
+  U0_REG_FILE/regfile_reg[13][7]
+  U0_REG_FILE/regfile_reg[14][0]
+  U0_REG_FILE/regfile_reg[14][1]
+  U0_REG_FILE/regfile_reg[14][2]
+  U0_REG_FILE/regfile_reg[14][3]
+  U0_REG_FILE/regfile_reg[14][4]
+  U0_REG_FILE/regfile_reg[14][5]
+  U0_REG_FILE/regfile_reg[14][6]
+  U0_REG_FILE/regfile_reg[14][7]
+  U0_REG_FILE/regfile_reg[15][0]
+  U0_REG_FILE/regfile_reg[15][1]
+  U0_REG_FILE/regfile_reg[15][2]
+  U0_REG_FILE/regfile_reg[15][3]
+  U0_REG_FILE/regfile_reg[15][4]
+  U0_REG_FILE/regfile_reg[15][5]
+  U0_REG_FILE/regfile_reg[15][6]
+  U0_REG_FILE/regfile_reg[15][7]
+  U0_SYS_CTRL/cs_reg[0]         
+  U0_SYS_CTRL/cs_reg[1]         
+  U0_SYS_CTRL/cs_reg[2]         
+  U0_SYS_CTRL/cs_reg[3]         
+  U0_SYS_CTRL/stored_addr_reg[0]
+  U0_SYS_CTRL/stored_addr_reg[1]
+  U0_SYS_CTRL/stored_addr_reg[2]
+  U0_SYS_CTRL/stored_addr_reg[3]
+  U0_UART/U0_RX/counter_inst/bit_cnt_reg[0]
+  U0_UART/U0_RX/counter_inst/bit_cnt_reg[1]
+  U0_UART/U0_RX/counter_inst/bit_cnt_reg[2]
+  U0_UART/U0_RX/counter_inst/bit_cnt_reg[3]
+  U0_UART/U0_RX/counter_inst/edge_cnt_reg[0]
+  U0_UART/U0_RX/counter_inst/edge_cnt_reg[1]
+  U0_UART/U0_RX/counter_inst/edge_cnt_reg[2]
+  U0_UART/U0_RX/counter_inst/edge_cnt_reg[3]
+  U0_UART/U0_RX/counter_inst/edge_cnt_reg[4]
+  U0_UART/U0_RX/counter_inst/edge_cnt_reg[5]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[0]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[1]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[2]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[3]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[4]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[5]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[6]
+  U0_UART/U0_RX/deser_inst/P_DATA_reg[7]
+  U0_UART/U0_RX/fsm_inst/cs_reg[0]
+  U0_UART/U0_RX/fsm_inst/cs_reg[1]
+  U0_UART/U0_RX/fsm_inst/cs_reg[2]
+  U0_UART/U0_RX/par_chk_inst/par_err_reg
+  U0_UART/U0_RX/samp_inst/sampled_bit_reg
+  U0_UART/U0_RX/samp_inst/samples_reg[0]
+  U0_UART/U0_RX/samp_inst/samples_reg[1]
+  U0_UART/U0_RX/samp_inst/samples_reg[2]
+  U0_UART/U0_RX/stp_chk_inst/stp_err_reg
+  U0_UART/U0_RX/strt_chk_inst/strt_glitch_reg
+  U0_UART/U0_TX/U0_FSM/busy_reg 
+  U0_UART/U0_TX/U0_FSM/cs_reg[0]
+  U0_UART/U0_TX/U0_FSM/cs_reg[1]
+  U0_UART/U0_TX/U0_FSM/cs_reg[2]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[1]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[3]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[4]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[5]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[6]
+  U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[7]
+  U0_UART/U0_TX/U0_PARITY_CALC/par_bit_reg
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[0]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[1]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[2]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[3]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[4]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[5]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6]
+  U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7]
+  U0_UART/U0_TX/U0_SER/counter_reg[0]
+  U0_UART/U0_TX/U0_SER/counter_reg[1]
+  U0_UART/U0_TX/U0_SER/counter_reg[2]
+  U0_UART/U0_TX/U0_MUX/TX_OUT_reg
+
+  Scan signals:
+    test_scan_in: SCAN_IN_4 (no hookup pin)
+    test_scan_out: SCAN_OUT_4 (no hookup pin)
+
+
+****************************************
+
+No user-defined segments
+
+
+No multibit segments
+
+
+****************************************
+
+No cells have scan true
+
+No cells have scan false
+
+
+No tristate nets.
+
+No bidirectionals.
+
+
+************ Test Point Plan Report ************
+Total number of test points  : 0
+Number of Autofix test points: 0
+Number of Wrapper test points: 0
+Number of test modes         : 0
+Number of test point enables : 0
+Number of data sources       : 0
+Number of data sinks         : 0
+**************************************************
+
+1
+# ################################## #
+# ========= Scan_Stitching ========= #
+# ################################## #
+insert_dft
+  Information: Using test design rule information from previous dft_drc run.
+  Architecting Scan Chains
+  Routing Scan Chains
+  Routing Global Signals
+  Mapping New Logic
+Resetting current test mode
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:13   29310.6      0.52      39.5       0.0                          
+
+1
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Thu Aug 28 04:25:08 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     28
+    Unconnected ports (LINT-28)                                    28
+
+Cells                                                              30
+    Connected to power or ground (LINT-32)                         25
+    Nets connected to multiple pins on same cell (LINT-33)          5
+--------------------------------------------------------------------------------
+
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'remainder[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW_div_uns_0', port 'divide_by_0' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'A[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'B[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_rx_fsm', port 'prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'uart_rx_fsm', port 'edge_cnt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_sampling', port 'prescale[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'data_sampling', port 'edge_cnt[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'A[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'B[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'ALU_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'TX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[7]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[6]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[5]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[4]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_div_ratio[3]' is connected to logic 0. 
+Warning: In design 'SYSTEM_TOP', a pin on submodule 'RX_CLK_DIV' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_clk_en' is connected to logic 1. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'sub_41' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[8]' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'add_40' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', a pin on submodule 'mult_42' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'TC' is connected to logic 0. 
+Warning: In design 'UART_TX', a pin on submodule 'U0_MUX' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'start_bit' is connected to logic 0. 
+Warning: In design 'UART_TX', a pin on submodule 'U0_MUX' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'stop_bit' is connected to logic 1. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[13]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[6]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[5]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[4]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[3]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[2]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[1]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[0]' is connected to logic 0. 
+Warning: In design 'ALU_DW02_mult_0', a pin on submodule 'FS_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'ALU', the same net is connected to more than one pin on submodule 'sub_41'. (LINT-33)
+   Net 'n1' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU', the same net is connected to more than one pin on submodule 'add_40'. (LINT-33)
+   Net 'n2' is connected to pins 'A[8]', 'B[8]'', 'CI'.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net 'n13' is connected to pins 'A[13]', 'B[6]''.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net 'n14' is connected to pins 'B[5]', 'B[4]'', 'B[3]', 'B[2]', 'B[1]'.
+Warning: In design 'ALU_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_1'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'B[0]', 'CI''.
+1
+dft_drc
+In mode: Internal_scan...
+  Design has scan chains in this mode
+  Design is scan routed
+  Post-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  ...checking vector rules...
+  ...checking clock rules...
+  ...checking scan chain rules...
+  ...checking scan compression rules...
+  ...checking X-state rules...
+  ...checking tristate rules...
+  ...extracting scan details...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  1 out of 339 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITH VIOLATIONS
+      *   1 cell is a clock gating cell
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      * 338 cells are valid scan cells
+
+Information: Test design rule checking completed. (TEST-123)
+1
+# ################################## #
+# ====== Fix Timing Violation ====== #
+# ################################## #
+compile -top 
+
+Information: There are 58 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition WORST set on design SYSTEM_TOP has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed90nm_min is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:00   30174.1      3.85     551.6      11.8                          
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX2' has scan pins. (OPT-1209)
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX1' has scan pins. (OPT-1209)
+    0:00:01   30710.5      3.85     483.7       3.0 U0_ALU/ALU_OUT_reg[6]/D  
+    0:00:01   30721.5      3.85     478.7       3.0 U0_ALU/ALU_OUT_reg[0]/D  
+    0:00:01   30725.2      3.85     478.4       3.0 U0_ALU/ALU_OUT_reg[12]/D 
+    0:00:01   30693.9      2.29     301.6       3.1 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]/D
+    0:00:01   30740.0      1.05     127.8       3.2 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]/D
+    0:00:01   30764.9      0.88      98.9       3.4 U0_REG_FILE/RdData_reg[1]/D
+    0:00:01   30753.8      0.83      79.2       3.4 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]/D
+    0:00:01   30790.7      0.63      42.7       3.4 U0_REG_FILE/regfile_reg[2][4]/D
+    0:00:01   30829.4      0.48      30.0       3.4 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][1]/D
+    0:00:01   30857.9      0.40      22.8       3.4 U0_SYS_CTRL/stored_addr_reg[1]/D
+    0:00:01   30872.7      0.31      16.4       3.4 U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][1]/D
+    0:00:01   30945.5      0.25       9.6       3.4 U0_REG_FILE/RdData_reg[1]/D
+    0:00:01   30975.9      0.10       2.0       3.1 U0_REG_FILE/RdData_reg[1]/D
+    0:00:01   30998.0      0.06       0.5       3.1 U0_REG_FILE/regfile_reg[11][5]/D
+    0:00:02   31005.4      0.06       0.5       3.1 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   30976.8      0.03       0.2       3.1 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   30957.5      0.01       0.0       3.1 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   30958.4      0.01       0.0       3.1 U0_ALU/ALU_OUT_reg[15]/D 
+    0:00:02   30977.7      0.00       0.0       3.1 U0_ALU/ALU_OUT_reg[0]/D  
+    0:00:02   30978.7      0.00       0.0       3.1                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02   30978.7      0.00       0.0       3.1                          
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_min.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db'
+Loading db file '/home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+# ################################## #
+# ============ Reports ============= #
+# ################################## #
+report_timing > ../reports/dft_timing_test_func.rpt
+set_case_analysis 1 TEST_MODE ; # Enable test mode
+1
+set_case_analysis 1 SCAN_EN ; # Enable test mode
+1
+report_timing > ../reports/dft_timing_test_Test.rpt
+dft_drc -coverage_estimate > ../reports/rpt_dft.drc_coverage
+dft_drc > ../reports/drc.rpt
+report_area > ../reports/dft_area.rpt
+report_qor > ../reports/dft_qor.rpt
+report_constraint -all_violators  > ../reports/dft_Violations.rpt
+report_scan_path -chain all > ../reports/scan_chains.rpt
+report_dft_signal -view exist > ../reports/dft_exist.rpt
+report_dft_signal -view spec > ../reports/dft_spec.rpt
+# ################################## #
+# ============ Outputs ============= #
+# ################################## #
+write -format ddc  -hierarchy -output ../outputs/${design}.ddc
+Writing ddc file '../outputs/SYSTEM_TOP.ddc'.
+1
+write -format verilog  -hierarchy -output ../outputs/${design}.v
+Writing verilog file '/home/ICer/Projects/Digital_System(RTL-to-GDSII)/dft/outputs/SYSTEM_TOP.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 5 nets to module SYSTEM_TOP using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+write_test_model -output ../outputs/${design}.ctl
+Writing test model file '/home/ICer/Projects/Digital_System(RTL-to-GDSII)/dft/outputs/SYSTEM_TOP.ctl'...
+Writing ddc file '/home/ICer/Projects/Digital_System(RTL-to-GDSII)/dft/outputs/SYSTEM_TOP.ctl'.
+1
+write_sdc ../outputs/${design}.sdc 
+1
+# ---- SPF_File (STIL Protcol File) ---- # 
+write_test_protocol -out ../outputs/${design}.spf
+Writing test protocol file '/home/ICer/Projects/Digital_System(RTL-to-GDSII)/dft/outputs/SYSTEM_TOP.spf' for mode 'Internal_scan'...
+1
+# ---- SDF_File (Standard Delay Format) ---- # 
+write_sdf  ../outputs/${design}.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/ICer/Projects/Digital_System(RTL-to-GDSII)/dft/outputs/SYSTEM_TOP.sdf'. (WT-3)
+1
+# ---- def_File (reorder scan chains placment step) ---- #
+write_scan_def -output ../outputs/${design}.def
+1
+## Switch to functional mode
+set_case_analysis 0 TEST_MODE 
+1
+set_case_analysis 0 SCAN_EN
+1
+1
+dc_shell> eixt
+Error: unknown command 'eixt' (CMD-005)
+dc_shell> exit
+
+Memory usage for main task 144 Mbytes.
+Memory usage for this session 144 Mbytes.
+CPU usage for this session 13 seconds ( 0.00 hours ).
+
+Thank you...

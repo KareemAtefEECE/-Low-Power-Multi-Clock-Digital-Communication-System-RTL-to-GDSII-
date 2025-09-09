@@ -1,0 +1,192 @@
+Information: The stitching and editing of coupling caps is turned OFF for design 'SYSTEM_TOP.dlib:SYSTEM_TOP_route.design'. (TIM-125)
+Information: Design SYSTEM_TOP_route has 2700 nets, 0 global routed, 2698 detail routed. (NEX-024)
+Information: The RC mode used is DR for design 'SYSTEM_TOP'. (NEX-022)
+---extraction options---
+Corner: default
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Global options:
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 6
+ extract.connect_open           : true
+ extract.incremental_extraction : true
+ extract.enable_coupling_cap    : false
+Extracting design: SYSTEM_TOP_route 
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 2698 nets are successfully extracted. (NEX-028)
+Information: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 2698, routed nets = 2698, across physical hierarchy nets = 0, parasitics cached nets = 2698, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 4. (TIM-112)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 3
+        -report_by design
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 19:56:34 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+  Startpoint: U0_SYS_CTRL/cs_reg[2] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_REG_FILE/RdData_reg[6] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: FUN_REF_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 1.53      1.53
+
+  U0_SYS_CTRL/cs_reg[2]/CLK (SDFFARX1)             0.00      1.53 r
+  U0_SYS_CTRL/cs_reg[2]/Q (SDFFARX1)               0.90      2.43 r
+  U0_SYS_CTRL/U147/QN (NOR3X0)                     0.25      2.67 f
+  U0_SYS_CTRL/U42/ZN (INVX0)                       0.16      2.83 r
+  U0_SYS_CTRL/U9/QN (OAI22X1)                      0.38      3.22 f
+  U0_REG_FILE/PLACE_copt_h_inst_4890/Z (DELLN3X2)
+                                                   2.92      6.14 f
+  U0_REG_FILE/PLACE_copt_h_inst_4889/Z (NBUFFX32)
+                                                   0.37      6.51 f
+  U0_REG_FILE/PLACE_copt_h_inst_4888/Z (NBUFFX2)   0.20      6.70 f
+  U0_REG_FILE/PLACE_copt_d_inst_5846/ZN (INVX1)    0.07      6.78 r
+  U0_REG_FILE/U281/Q (OR2X1)                       0.17      6.95 r
+  U0_REG_FILE/PLACE_HFSINV_940_221/ZN (INVX0)      0.16      7.11 f
+  U0_REG_FILE/PLACE_HFSBUF_826_218/Z (NBUFFX2)     0.24      7.35 f
+  U0_REG_FILE/PLACE_HFSBUF_709_217/Z (NBUFFX2)     0.20      7.55 f
+  U0_REG_FILE/U373/Q (AO22X1)                      0.36      7.91 f
+  U0_REG_FILE/U328/Q (AO221X1)                     0.27      8.19 f
+  U0_REG_FILE/PLACE_copt_h_inst_5607/Z (DELLN1X2)
+                                                   0.89      9.07 f
+  U0_REG_FILE/PLACE_copt_h_inst_9012/Z (NBUFFX2)   0.19      9.26 f
+  U0_REG_FILE/U336/Q (AO221X1)                     0.46      9.72 f
+  U0_REG_FILE/U182/Q (AO22X1)                      0.29     10.01 f
+  U0_REG_FILE/RdData_reg[6]/D (SDFFARX1)           0.00     10.01 f
+  data arrival time                                         10.01
+
+  clock FUN_REF_CLK (rise edge)                   10.00     10.00
+  clock network delay (propagated)                 0.31     10.31
+  clock reconvergence pessimism                    0.54     10.85
+  U0_REG_FILE/RdData_reg[6]/CLK (SDFFARX1)         0.00     10.85 r
+  clock uncertainty                               -0.20     10.65
+  library setup time                              -0.64     10.02
+  data required time                                        10.02
+  ------------------------------------------------------------------------
+  data required time                                        10.02
+  data arrival time                                        -10.01
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+
+  Startpoint: U0_DATA_SYNC/sync_bus_reg[0] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg[4] (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 1.53      1.53
+
+  U0_DATA_SYNC/sync_bus_reg[0]/CLK (SDFFARX1)      0.00      1.53 r
+  U0_DATA_SYNC/sync_bus_reg[0]/Q (SDFFARX1)        0.91      2.44 f
+  U0_SYS_CTRL/PLACE_copt_h_inst_4892/Z (DELLN3X2)
+                                                   2.88      5.32 f
+  U0_SYS_CTRL/PLACE_copt_h_inst_4893/Z (NBUFFX2)   0.22      5.54 f
+  U0_SYS_CTRL/PLACE_copt_d_inst_5849/ZN (INVX0)    0.10      5.65 r
+  U0_SYS_CTRL/U126/QN (NOR2X1)                     0.18      5.83 f
+  U0_ALU/U134/ZN (INVX0)                           0.16      5.99 r
+  U0_ALU/U153/QN (NOR2X0)                          0.19      6.18 f
+  U0_ALU/U112/QN (NAND2X0)                         0.18      6.36 r
+  U0_ALU/U210/Q (OA21X1)                           0.33      6.69 r
+  U0_ALU/U221/ZN (INVX0)                           0.20      6.89 f
+  U0_ALU/U15/Q (AO221X1)                           0.46      7.36 f
+  U0_ALU/U185/QN (NAND2X1)                         0.12      7.47 r
+  U0_ALU/U14/QN (NAND3X0)                          0.14      7.62 f
+  U0_ALU/U75/Q (AO221X1)                           0.27      7.89 f
+  U0_ALU/U197/Q (OA21X1)                           0.33      8.21 f
+  U0_ALU/PLACE_copt_h_inst_9028/Z (NBUFFX2)        0.17      8.39 f
+  U0_ALU/PLACE_copt_h_inst_4963/Z (DELLN2X2)       2.01     10.39 f
+  U0_ALU/PLACE_copt_h_inst_4962/Z (NBUFFX2)        0.23     10.63 f
+  U0_ALU/ALU_OUT_reg[4]/D (SDFFARX1)               0.00     10.63 f
+  data arrival time                                         10.63
+
+  clock ALU_CLK (rise edge)                       10.00     10.00
+  clock network delay (propagated)                 0.84     10.84
+  clock reconvergence pessimism                    0.54     11.38
+  U0_ALU/ALU_OUT_reg[4]/CLK (SDFFARX1)             0.00     11.38 r
+  clock uncertainty                               -0.20     11.18
+  library setup time                              -0.54     10.64
+  data required time                                        10.64
+  ------------------------------------------------------------------------
+  data required time                                        10.64
+  data arrival time                                        -10.63
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.01
+
+
+
+  Startpoint: U0_DATA_SYNC/sync_bus_reg[0] (rising edge-triggered flip-flop clocked by FUN_REF_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg[3] (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock FUN_REF_CLK (rise edge)                    0.00      0.00
+  clock network delay (propagated)                 1.53      1.53
+
+  U0_DATA_SYNC/sync_bus_reg[0]/CLK (SDFFARX1)      0.00      1.53 r
+  U0_DATA_SYNC/sync_bus_reg[0]/Q (SDFFARX1)        0.91      2.44 f
+  U0_SYS_CTRL/PLACE_copt_h_inst_4892/Z (DELLN3X2)
+                                                   2.88      5.32 f
+  U0_SYS_CTRL/PLACE_copt_h_inst_4893/Z (NBUFFX2)   0.22      5.54 f
+  U0_SYS_CTRL/PLACE_copt_d_inst_5849/ZN (INVX0)    0.10      5.65 r
+  U0_SYS_CTRL/U126/QN (NOR2X1)                     0.18      5.83 f
+  U0_ALU/U211/QN (NOR2X0)                          0.21      6.04 r
+  U0_ALU/U135/ZN (INVX0)                           0.18      6.22 f
+  U0_ALU/U217/ZN (INVX0)                           0.14      6.36 r
+  U0_ALU/U77/QN (NAND3X0)                          0.24      6.60 f
+  U0_ALU/PLACE_HFSINV_1252_233/ZN (INVX2)          0.09      6.68 r
+  U0_ALU/PLACE_copt_h_inst_9101/Z (NBUFFX2)        0.21      6.90 r
+  U0_ALU/PLACE_copt_h_inst_9100/Z (NBUFFX32)       0.29      7.19 r
+  U0_ALU/U84/Q (AO221X1)                           0.23      7.42 r
+  U0_ALU/U104/Q (AO222X1)                          0.40      7.82 r
+  U0_ALU/U47/QN (NOR4X1)                           0.31      8.13 f
+  U0_ALU/PLACE_copt_h_inst_9025/Z (NBUFFX2)        0.17      8.30 f
+  U0_ALU/PLACE_copt_h_inst_4964/Z (DELLN2X2)       2.03     10.33 f
+  U0_ALU/PLACE_copt_h_inst_4965/Z (NBUFFX2)        0.24     10.57 f
+  U0_ALU/U232/QN (NOR2X0)                          0.11     10.68 r
+  U0_ALU/ALU_OUT_reg[3]/D (SDFFARX1)               0.00     10.68 r
+  data arrival time                                         10.68
+
+  clock ALU_CLK (rise edge)                       10.00     10.00
+  clock network delay (propagated)                 0.84     10.84
+  clock reconvergence pessimism                    0.54     11.38
+  U0_ALU/ALU_OUT_reg[3]/CLK (SDFFARX1)             0.00     11.38 r
+  clock uncertainty                               -0.20     11.18
+  library setup time                              -0.48     10.70
+  data required time                                        10.70
+  ------------------------------------------------------------------------
+  data required time                                        10.70
+  data arrival time                                        -10.68
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.02
+
+
+1

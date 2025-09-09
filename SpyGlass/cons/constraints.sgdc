@@ -1,0 +1,15 @@
+
+# define top_module
+current_design SYSTEM_TOP
+
+# define all the clock sources in top_module with their port_names in the rtl
+clock -name "REF_CLK" -edge {"0" "5"} -period 10 
+clock -name "UART_CLK" -edge {"0" "135.633"} -period 271.267
+
+# define any generated_clk as the TX_CLK
+generated_clock -name "TX_CLK" -source "UART_CLK" -divide_by 32
+reset -name "RST" -value 0
+
+# define the in_s/out_s in the top_module and their clk_domains 
+input -name RX_IN -clock TX_CLK
+output -name TX_OUT -clock TX_CLK 

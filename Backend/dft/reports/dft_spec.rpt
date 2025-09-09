@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : DFT signals
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 04:25:14 2025
+****************************************
+
+========================================
+TEST MODE: all_dft
+VIEW     : Specification
+========================================
+Port               SignalType          Active    Hookup    Timing    Usage
+----------         ----------          ------    ------    ------    -----
+SCAN_EN            ScanEnable          1         -         -         -
+SCAN_IN_1          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_1         ScanDataOut         -         -         -         -
+SCAN_IN_2          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_2         ScanDataOut         -         -         -         -
+SCAN_IN_3          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_3         ScanDataOut         -         -         -         -
+SCAN_IN_4          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_4         ScanDataOut         -         -         -         -
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Specification
+========================================
+Port               SignalType          Active    Hookup    Timing    Usage
+----------         ----------          ------    ------    ------    -----
+SCAN_EN            ScanEnable          1         -         -         -
+SCAN_IN_1          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_1         ScanDataOut         -         -         -         -
+SCAN_IN_2          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_2         ScanDataOut         -         -         -         -
+SCAN_IN_3          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_3         ScanDataOut         -         -         -         -
+SCAN_IN_4          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_4         ScanDataOut         -         -         -         -
+
+========================================
+TEST MODE: Mission_mode
+VIEW     : Specification
+========================================
+Port               SignalType          Active    Hookup    Timing    Usage
+----------         ----------          ------    ------    ------    -----
+SCAN_EN            ScanEnable          1         -         -         -
+SCAN_IN_1          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_1         ScanDataOut         -         -         -         -
+SCAN_IN_2          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_2         ScanDataOut         -         -         -         -
+SCAN_IN_3          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_3         ScanDataOut         -         -         -         -
+SCAN_IN_4          ScanDataIn          -         -         Delay 0.0 -
+SCAN_OUT_4         ScanDataOut         -         -         -         -
+
+1

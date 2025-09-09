@@ -1,0 +1,4 @@
+ClkDiv,../rtl/SYSTEM_TOP.v_69,1,i_clk_en,1'b1
+ClkDiv,../rtl/SYSTEM_TOP.v_77,1,i_clk_en,1'b1
+mux4x1,../rtl/UART_TX.v_55,1,start_bit,1'b0
+mux4x1,../rtl/UART_TX.v_55,1,stop_bit,1'b1

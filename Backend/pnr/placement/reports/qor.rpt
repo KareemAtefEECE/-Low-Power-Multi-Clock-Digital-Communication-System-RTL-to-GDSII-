@@ -1,0 +1,120 @@
+****************************************
+Report : qor
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 16:43:57 2025
+****************************************
+
+
+Scenario           'default'
+Timing Path Group  'FUN_REF_CLK'
+----------------------------------------
+Levels of Logic:                     14
+Critical Path Length:              4.45
+Critical Path Slack:               4.72
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.24
+Total Hold Violation:            -21.72
+No. of Hold Violations:             230
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'FUN_UART_CLK'
+----------------------------------------
+Levels of Logic:                      7
+Critical Path Length:              2.94
+Critical Path Slack:             267.51
+Critical Path Clk Period:        271.27
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.20
+Total Hold Violation:             -2.27
+No. of Hold Violations:              18
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'FUN_TX_CLK'
+----------------------------------------
+Levels of Logic:                      2
+Critical Path Length:              1.49
+Critical Path Slack:             269.58
+Critical Path Clk Period:       8680.54
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.21
+Total Hold Violation:             -7.83
+No. of Hold Violations:              37
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'FUN_RX_CLK'
+----------------------------------------
+Levels of Logic:                      3
+Critical Path Length:             54.88
+Critical Path Slack:             215.56
+Critical Path Clk Period:        271.27
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.11
+Total Hold Violation:             -3.11
+No. of Hold Violations:              28
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'ALU_CLK'
+----------------------------------------
+Levels of Logic:                     21
+Critical Path Length:              6.31
+Critical Path Slack:               2.85
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.14
+Total Hold Violation:             -1.06
+No. of Hold Violations:              17
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             47
+Hierarchical Port Count:           1317
+Leaf Cell Count:                   1936
+Buf/Inv Cell Count:                 353
+Buf Cell Count:                     165
+Inv Cell Count:                     188
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:          1597
+Sequential Cell Count:              339
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:            15848.76
+Noncombinational Area:         12801.02
+Buf/Inv Area:                   2023.83
+Total Buffer Area:               940.03
+Total Inverter Area:            1083.80
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                          28649.78
+Cell Area (netlist and physical only):        28649.78
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:              2075
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

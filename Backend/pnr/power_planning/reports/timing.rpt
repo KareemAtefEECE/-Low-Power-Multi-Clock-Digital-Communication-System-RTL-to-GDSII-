@@ -1,0 +1,43 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Fri Aug 29 02:43:47 2025
+****************************************
+
+  Startpoint: U0_ALU/ALU_OUT_reg[0] (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg[1] (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Mode: default
+  Corner: default
+  Scenario: default
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock ALU_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  U0_ALU/ALU_OUT_reg[0]/CLK (SDFFARX2)             0.00      0.00 r
+  U0_ALU/ALU_OUT_reg[0]/Q (SDFFARX2)               0.80      0.80 f
+  U0_ALU/ALU_OUT_reg[1]/SI (SDFFARX1)              0.00      0.80 f
+  data arrival time                                          0.80
+
+  clock ALU_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  U0_ALU/ALU_OUT_reg[1]/CLK (SDFFARX1)             0.00     10.00 r
+  clock uncertainty                               -0.20      9.80
+  library setup time                              -0.65      9.15
+  data required time                                         9.15
+  ------------------------------------------------------------------------
+  data required time                                         9.15
+  data arrival time                                         -0.80
+  ------------------------------------------------------------------------
+  slack (MET)                                                8.35
+
+
+1

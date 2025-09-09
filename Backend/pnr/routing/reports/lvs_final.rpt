@@ -1,0 +1,31 @@
+Information: Using 6 threads for LVS
+[Check Net] Init	[Check Short] Stage 1	Elapsed =    0:00:00, CPU =    0:00:00
+Elapsed =    0:00:00, CPU =    0:00:00
+Warning: Port VDD have no valid pin shapes. Skip this port. (RT-203)
+Warning: Port VSS have no valid pin shapes. Skip this port. (RT-203)
+[Check Short] Stage 1-2	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 2	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 2-2	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Short] Stage 3	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Short] End	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 10% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 20% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 30% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 40% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 50% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 60% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 70% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 80% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] 90% 	Elapsed =    0:00:00, CPU =    0:00:02
+[Check Net] All nets are submitted.
+[Check Net] 100%	Elapsed =    0:00:00, CPU =    0:00:02
+Information: Detected open violation for Net VDD. BBox: (3.5000 3.5000)(265.4600 264.1800). (RT-585)
+Information: Detected open violation for Net VSS. BBox: (7.0000 7.0000)(261.9600 260.6800). (RT-585)
+Total number of input nets is 2706.
+Total number of short violations is 0.
+Total number of open nets is 2.
+Open nets are VDD VSS 
+Total number of floating route violations is 0.
+
+Elapsed =    0:00:01, CPU =    0:00:03
+1

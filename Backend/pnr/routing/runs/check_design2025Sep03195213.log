@@ -1,0 +1,196 @@
+****************************************
+Report : Data Mismatches
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 19:52:13 2025
+****************************************
+No mismatches exist on the design.
+1
+****************************************
+Report : SCANDEF check
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 19:52:13 2025
+****************************************
+  Checking between SCANDEF file and design:
+
+  Total PARTITION group count: 1
+  Total SCANCHAINS checked: 4
+  VALIDATED :  4
+  FAILED    :  0
+
+  Chain name     Status    #cells    #bits     PARTITION      Scan in        Scan out
+  1              V         85        85        SCAN_CLK_45_45 SCAN_IN_1      SCAN_OUT_1
+  2              V         85        85        SCAN_CLK_45_45 SCAN_IN_2      SCAN_OUT_2
+  3              V         84        84        SCAN_CLK_45_45 SCAN_IN_3      SCAN_OUT_3
+  4              V         84        84        SCAN_CLK_45_45 SCAN_IN_4      SCAN_OUT_4
+1
+NEX: 3025 nets
+NEX: 99.93%(3023/3025) nets are valid placed
+
+Histogram of "num of nodes per net"
+  value: 	percent%
+     0: 	0.1% 
+     2: 	62.0% (peak)
+     3: 	15.3% 
+     4: 	9.1% 
+     5: 	10.0% (average = 5) 
+    10: 	3.3% 
+    20: 	0.1% 
+    40: 	0.2% 
+    1000: 	0.1% 
+
+
+Histogram of "net bbox size(um)"
+  value: 	percent%
+   0.00: 	0.1% 
+   1.00: 	1.4% 
+   2.00: 	2.8% 
+   3.00: 	6.5% 
+   4.00: 	9.8% (peak)
+   5.00: 	26.1% 
+   10.00: 	24.3% (average = 18.9) 
+   20.00: 	18.5% 
+   40.00: 	8.9% 
+   100.00: 	1.4% 
+   200.00: 	0.2% 
+
+
+Histogram of "net bbox aspect()"
+  value: 	percent%
+   0.00: 	0.1% 
+   1.00: 	8.9% (peak)
+   1.10: 	6.7% 
+   1.20: 	6.5% 
+   1.30: 	5.8% 
+   1.40: 	5.6% 
+   1.50: 	4.3% 
+   1.60: 	4.7% 
+   1.70: 	3.6% 
+   1.80: 	3.9% 
+   1.90: 	3.1% 
+   2.00: 	13.0% 
+   2.50: 	9.1% (average = 2.7) 
+   3.00: 	10.3% 
+   4.00: 	5.2% 
+   5.00: 	7.3% 
+   10.00: 	1.7% 
+   20.00: 	0.3% 
+   30.00: 	0.1% 
+   40.00: 	0.0% 
+
+NEX: 2890 insts
+
+Histogram of "inst bbox size(um)"
+  value: 	percent%
+   3.00: 	56.3% (peak)
+   4.00: 	16.9% 
+   5.00: 	11.4% (average = 5.2) 
+   10.00: 	15.5% 
+
+NEX: 1 NDR rules: 
+  [0] clk_network_NDR
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     enabled
+Advanced Receiver Model:                   disabled
+************************************************************
+1
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Warning: Ignore contact DIFFCON. (ZRT-015)
+Turn off antenna since no rule is specified
+Cell Min-Routing-Layer = M1
+Cell Max-Routing-Layer = M8
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Via on layer (CO) needs more than one tracks
+Warning: Layer M1 pitch 0.320 may be too small: wire/via-down 0.325, wire/via-up 0.290. (ZRT-026)
+Via on layer (VIA2) needs more than one tracks
+Warning: Layer M2 pitch 0.320 may be too small: wire/via-down 0.320, wire/via-up 0.360. (ZRT-026)
+Printing options for 'route.common.*'
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 true                
+detail.force_end_on_preferred_grid                      :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+
+============================================
+==  Check for overlap of standard cells   ==
+============================================
+
+>>>>>> No overlap of standard cells found
+
+============================================
+==     Check for min-grid violations      ==
+============================================
+
+>>>>>> No min-grid violations found
+
+
+============================================
+==    Check for out-of-boundary ports     ==
+============================================
+
+>>>>>> No out-of-boundary error found
+
+============================================
+==        Check for blocked ports         ==
+============================================
+
+>>>>>> No blocked ports found
+
+>>>>>> No blocked nets found
+
+============================================
+==     Check for shielding violations     ==
+============================================
+
+>>>>>> The following Non-PG net has a shape with shape_use shield_route
+
+>>> No non-PG net has a shape with shape_use shield_route.
+
+>>>>>> The following PG net has shape with shape_use detail_route and shape length is too long.
+
+>>> No PG net has shape with shape_use detail_route and shape length is too long.
+
+>>>>>> The following nets with shield non-default rule has no internal data representation in Zroute.
+
+>>> No nets with shield non-default rule has no internal data representation in Zroute.
+
+============================================
+==     Check for via cut blockage violation   ==
+============================================
+
+>>>>>> The following via cut blockages are wrongly treated as real vias.
+
+>>> No via cut blockage is wrongly treated as real via.
+
+============================================
+==     Check for custom via definition    ==
+============================================
+
+>>> No custom via definition has too many cuts
+
+============================================
+==          Check for via master          ==
+============================================
+
+>>> The total number of via master definition is 84
+
+===============================================
+==     Check non-default rule setting        ==
+===============================================
+
+>>> No NDR width is larger than signalRouteMaxWidth
+
+>>> No NDR shield width is larger than signalRouteMaxWidth
+
+End of check_routability
+1

@@ -1,0 +1,10 @@
+waive -msg {5 synchronizers (SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][1:0],SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][3:2] ...) converge on MUX 'SYSTEM_TOP.WR_DATA[0]' (same source divergence)}  -rule {  {Ac_conv01}  }  -comment {Created by ICer on 24-Aug-2025 23:24:54}  -exact 
+waive -rule {  {Ac_conv02}  }  -comment {Created by ICer on 24-Aug-2025 23:25:08}  -exact 
+waive -rule {  {Ac_conv04}  }  -comment {Created by ICer on 24-Aug-2025 23:25:28}  -exact 
+waive -rule {  {Ac_coherency06}  }  -comment {Created by ICer on 24-Aug-2025 23:25:28}  -exact 
+waive -msg {Destination flop 'SYSTEM_TOP.U0_DATA_SYNC.U0_BIT_SYNC.q[0][0]' clocked by 'SYSTEM_TOP.REF_CLK' can glitch (2 source(s), 1 domain(s)). Reason :'Source reconverges'}  -rule {  {Ac_glitch03}  }  -comment {Created by ICer on 24-Aug-2025 23:27:55}  -exact 
+waive -msg {Destination flop 'SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][2:0]' clocked by 'SYSTEM_TOP.REF_CLK' can glitch (1 source(s), 1 domain(s)). Reason :'Sources from same domain in fanin'}  -rule {  {Ac_glitch03}  }  -comment {Created by ICer on 24-Aug-2025 23:27:55}  -exact 
+waive -msg {Destination flop 'SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R.q[0][2:0]' clocked by 'SYSTEM_TOP.TX_CLK' can glitch (1 source(s), 1 domain(s)). Reason :'Sources from same domain in fanin'}  -rule {  {Ac_glitch03}  }  -comment {Created by ICer on 24-Aug-2025 23:27:55}  -exact 
+waive -rule {  {Setup_port01}  }  -comment {Created by ICer on 24-Aug-2025 23:28:07}  -exact 
+waive -rule {  {Ac_unsync01}  }  -comment {Created by ICer on 24-Aug-2025 23:36:40}  -exact 
+waive -rule {  {Ac_unsync02}  }  -comment {Created by ICer on 24-Aug-2025 23:36:40}  -exact 

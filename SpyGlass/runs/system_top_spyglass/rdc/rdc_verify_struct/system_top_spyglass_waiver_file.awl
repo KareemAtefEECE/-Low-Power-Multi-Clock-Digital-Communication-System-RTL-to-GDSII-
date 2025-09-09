@@ -1,0 +1,1 @@
+waive -rule {  {Setup_port01}  }  -comment {Created by ICer on 24-Aug-2025 23:41:31}  -exact 

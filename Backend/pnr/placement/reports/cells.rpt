@@ -1,0 +1,137 @@
+****************************************
+Report : cell
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 16:43:57 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model
+    U - Unbound (missing)
+    s - user size_only
+    S - implicit size_only
+    d - user dont_touch
+    D - derived dont_touch
+    o - synthetic operator
+
+
+Cell                      Reference       Library          Attributes
+--------------------------------------------------------------------------------
+Mux3x1                    Prescale_mux                     h
+PLACE_HFSBUF_1046_161     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_1190_93      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_1411_163     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_1461_97      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_1672_164     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_1719_181     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_196_188      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_2158_173     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_224_269      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_2251_171     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_2798_174     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_2817_69      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_3079_176     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_313_187      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_3159_72      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_3205_179     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_3659_83      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_383_271      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_4063_183     NBUFFX8         saed90nm_m       
+PLACE_HFSBUF_5080_146     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5147_98      NBUFFX8         saed90nm_m       
+PLACE_HFSBUF_5316_147     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5393_148     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5460_149     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5504_152     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5576_150     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5641_151     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_5823_153     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_637_190      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_6556_154     NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_69_110       NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_752_111      NBUFFX8         saed90nm_m       
+PLACE_HFSBUF_908_100      NBUFFX2         saed90nm_m       
+PLACE_HFSBUF_962_95       NBUFFX2         saed90nm_m       
+PLACE_HFSINV_170_257      INVX2           saed90nm_m       
+PLACE_HFSINV_350_248      INVX0           saed90nm_m       
+PLACE_HFSINV_907_243      INVX2           saed90nm_m       
+PLACE_optlc_1689          TIEL            saed90nm_m       
+PLACE_optlc_1691          TIEL            saed90nm_m       
+PLACE_optlc_1693          TIEL            saed90nm_m       
+PLACE_optlc_1695          TIEL            saed90nm_m       
+PLACE_optlc_1697          TIEL            saed90nm_m       
+PLACE_optlc_1699          TIEL            saed90nm_m       
+PLACE_optlc_1701          TIEL            saed90nm_m       
+PLACE_optlc_1703          TIEL            saed90nm_m       
+PLACE_optlc_1705          TIEL            saed90nm_m       
+PLACE_optlc_1706          TIEL            saed90nm_m       
+PLACE_optlc_1710          TIEL            saed90nm_m       
+PLACE_optlc_1712          TIEL            saed90nm_m       
+PLACE_optlc_1714          TIEL            saed90nm_m       
+PLACE_optlc_1716          TIEL            saed90nm_m       
+PLACE_optlc_1718          TIEL            saed90nm_m       
+PLACE_optlc_1721          TIEL            saed90nm_m       
+PLACE_optlc_1723          TIEL            saed90nm_m       
+PLACE_optlc_1725          TIEL            saed90nm_m       
+PLACE_optlc_1726          TIEL            saed90nm_m       
+PLACE_optlc_1729          TIEH            saed90nm_m       
+PLACE_optlc_1730          TIEH            saed90nm_m       
+PLACE_optlc_1731          TIEH            saed90nm_m       
+RST_SYNC_1                RST_SYNC_0                       h
+RST_SYNC_2                RST_SYNC_1                       h
+RX_CLK_DIV                ClkDiv_1                         h
+SpareCell_0               NAND2X2         saed90nm_m       d
+SpareCell_0_0             INVX2           saed90nm_m       d
+SpareCell_0_1             INVX2           saed90nm_m       d
+SpareCell_0_2             INVX2           saed90nm_m       d
+SpareCell_0_3             INVX2           saed90nm_m       d
+SpareCell_0_4             INVX2           saed90nm_m       d
+SpareCell_0_5             INVX2           saed90nm_m       d
+SpareCell_0_6             INVX2           saed90nm_m       d
+SpareCell_0_7             INVX2           saed90nm_m       d
+SpareCell_0_8             INVX2           saed90nm_m       d
+SpareCell_0_9             INVX2           saed90nm_m       d
+SpareCell_1               NAND2X2         saed90nm_m       d
+SpareCell_1_0             XOR2X1          saed90nm_m       d
+SpareCell_1_1             XOR2X1          saed90nm_m       d
+SpareCell_1_2             XOR2X1          saed90nm_m       d
+SpareCell_1_3             XOR2X1          saed90nm_m       d
+SpareCell_1_4             XOR2X1          saed90nm_m       d
+SpareCell_1_5             XOR2X1          saed90nm_m       d
+SpareCell_1_6             XOR2X1          saed90nm_m       d
+SpareCell_1_7             XOR2X1          saed90nm_m       d
+SpareCell_1_8             XOR2X1          saed90nm_m       d
+SpareCell_1_9             XOR2X1          saed90nm_m       d
+SpareCell_2               NAND2X2         saed90nm_m       d
+SpareCell_3               NAND2X2         saed90nm_m       d
+SpareCell_4               NAND2X2         saed90nm_m       d
+SpareCell_5               NAND2X2         saed90nm_m       d
+SpareCell_6               NAND2X2         saed90nm_m       d
+SpareCell_7               NAND2X2         saed90nm_m       d
+SpareCell_8               NAND2X2         saed90nm_m       d
+SpareCell_9               NAND2X2         saed90nm_m       d
+TX_CLK_DIV                ClkDiv_0                         h
+U0_ALU                    ALU                              h
+U0_ASYN_FIFO              ASYNC_FIFO                       h
+U0_CLK_GATE               CLK_GATE                         h
+U0_DATA_SYNC              DATA_SYNC                        h
+U0_MUX2x1                 Mux2x1_1                         h
+U0_PULSE_GEN              PULSE_GEN_0                      h
+U0_REG_FILE               REG_FILE                         h
+U0_SYS_CTRL               SYS_CTRL                         h
+U0_UART                   UART                             h
+U1_MUX2x1                 Mux2x1_4                         h
+U2_MUX2x1                 Mux2x1_3                         h
+U3_MUX2x1                 Mux2x1_2                         h
+U4_MUX2x1                 Mux2x1_0                         h
+U5_MUX2x1                 Mux2x1_6                         h
+U6_MUX2x1                 Mux2x1_5                         h
+--------------------------------------------------------------------------------
+Total 109 cells
+
+1

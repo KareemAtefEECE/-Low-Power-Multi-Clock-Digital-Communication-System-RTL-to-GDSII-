@@ -1,0 +1,112 @@
+Information: CTS will work on the following scenarios. (CTS-101)
+   default	(Mode: default; Corner: default)
+Information: CTS will work on all clocks in active scenarios, including 3 master clocks and 3 generated clocks. (CTS-107)
+Information: Clock derating is disabled
+
+CTS related app options set by user:
+   cts.common.user_instance_name_prefix = CTS_
+
+****************************************
+Report : check_clock_tree
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 19:56:32 2025
+****************************************
+
+=================================================
+Summary
+=================================================
+
+Tag           Count     Solution  Description
+--------------------------------------------------------------------------------
+
+---------------------------------------------
+       Clock Definitions & Propagation
+---------------------------------------------
+CTS-002       0         None      There are active CTS scenarios with no clock definition.
+CTS-004       0         None      There are generated clocks that cannot be reached by their master clock.
+CTS-005       0         None      Generated clocks defined on bidirectional pins
+CTS-019       0         None      Clocks propagate to output ports
+CTS-905       1         None      There are clocks with no sinks
+CTS-906       0         None      There are sinks with no clock
+CTS-907       0         None      There are disabled timing arcs in the clock network
+
+---------------------------------------------
+               Reference Cells
+---------------------------------------------
+CTS-007       0         None      Failed to specify any clock buffers or inverters for CTS
+CTS-008       0         None      Clock reference cells have dont_touch or dont_use
+CTS-903       4         None      Cells instantiated in the clock network are not in the clock reference list
+CTS-904       2         None      Some clock reference cells have no LEQ cell specified for resizing
+
+---------------------------------------------
+               Skew Balancing
+---------------------------------------------
+CTS-006       0         None      Balancing conflicts exist between different clocks
+CTS-009       0         None      Cell instances in the clock tree have multiple conditional delay arcs between the same pins
+CTS-908       0         None      Large phase delay in abstracted sub-blocks
+CTS-910       0         None      Balance point constraints are defined downstream of another balance point or ignore point constraint
+CTS-911       0         None      Clock pins downstream of a balance point or ignore point have been added to a skew group
+CTS-913       0         None      Explicit ignore points have been added to a skew group, and will not be balanced
+CTS-917       0         None      Implicit ignore points have been added to a skew group, and will be balanced
+
+---------------------------------------------
+                Multi-Voltage
+---------------------------------------------
+CTS-901       0         None      Clock nets have MV violations
+CTS-902       0         None      No AON (always-on) buffers or inverters available for CTS
+CTS-918       0         None      Voltage area blocked for buffering.
+
+---------------------------------------------
+    Capacitance & Transition Constraints
+---------------------------------------------
+CTS-909       0         None      set_load constraints detected in the clock tree
+CTS-912       0         None      set_load constraints on output clock ports exceed the max capacitance limit
+CTS-914       2         None      set_input_transition on clock ports exceeds the max transition limit
+CTS-915       0         None      Excessively small max capacitance constraints in the clock network
+CTS-916       0         None      Excessively small max transition constraints in the clock network
+
+---------------------------------------------
+                Other issues
+---------------------------------------------
+CTS-012       0         None      Nets in the clock network have a dont_touch constraint
+CTS-013       0         None      Cells in the clock network have a dont_touch constraint
+CTS-015       0         None      set_max_delay or set_min_delay constraints are defined in the clock network
+CTS-900       0         None      Clock routing rules are outside of allowable layers
+=================================================
+                     Details
+=================================================
+
+---------------------------------------------------------------------------------------
+Warning: Cells instantiated in the clock network are not in the clock reference list (CTS-903)
+---------------------------------------------------------------------------------------
+Check         Lib cell           Example Instance
+---------------------------------------------------------------------------------------
+CTS-903       NBUFFX2            TX_CLK_DIV/CTS_dftopt2_btd1734
+CTS-903       NBUFFX2            RX_CLK_DIV/PLACE_APS_CLK_ISO_37
+CTS-903       NBUFFX2            RST_SYNC_2/CTS_dftopt3_btd1733
+CTS-903       NBUFFX2            TX_CLK_DIV/PLACE_APS_CLK_ISO_36
+
+---------------------------------------------------------------------------------------
+Warning: Some clock reference cells have no LEQ cell specified for resizing (CTS-904)
+---------------------------------------------------------------------------------------
+Check         Lib cell                                                 Example Instance
+---------------------------------------------------------------------------------------
+CTS-904       SYSTEM_TOP.dlib/SYSTEM_TOP_route                         U0_CLK_GATE
+CTS-904       saed90nm_max_cg/CGLPPSX4                                 U0_CLK_GATE/U0_CGLPPSX4
+
+---------------------------------------------------------------------------------------
+Warning: There are clocks with no sinks (CTS-905)
+---------------------------------------------------------------------------------------
+Check         Clock              Mode
+---------------------------------------------------------------------------------------
+CTS-905       SCAN_CLK           default
+
+---------------------------------------------------------------------------------------
+Warning: set_input_transition on clock ports exceeds the max transition limit (CTS-914)
+---------------------------------------------------------------------------------------
+Check         Port                             Input transition        Max transition
+---------------------------------------------------------------------------------------
+CTS-914       FUN_REF_CLK                      0.2                     0.1
+CTS-914       FUN_UART_CLK                     0.2                     0.1
+1

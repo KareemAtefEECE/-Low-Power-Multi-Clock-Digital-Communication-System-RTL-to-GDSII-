@@ -1,0 +1,696 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 04:25:14 2025
+****************************************
+
+
+   min_delay/hold ('SCAN_CLK' group)
+
+                             Required        Actual
+   Endpoint                 Path Delay     Path Delay        Slack
+   -----------------------------------------------------------------
+   U0_DATA_SYNC/enable_pulse_reg/SI
+                                0.79           0.67 f        -0.12  (VIOLATED)
+   U0_REG_FILE/RdData_Valid_reg/SI
+                                0.79           0.67 f        -0.12  (VIOLATED)
+   U0_UART/U0_RX/stp_chk_inst/stp_err_reg/SI
+                                0.79           0.67 f        -0.12  (VIOLATED)
+   U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][3]/SI
+                                0.80           0.68 f        -0.12  (VIOLATED)
+   U0_REG_FILE/regfile_reg[2][0]/SI
+                                0.81           0.69 f        -0.11  (VIOLATED)
+   RST_SYNC_1/sync_rst_reg[1]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   RST_SYNC_2/sync_rst_reg[1]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][1]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][2]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][3]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][0]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_DATA_SYNC/U0_BIT_SYNC/q_reg[1][0]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_REG_FILE/regfile_reg[2][7]/SI
+                                0.80           0.70 f        -0.10  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[3]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[0]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_SYS_CTRL/stored_addr_reg[1]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[1]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[2]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[3]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[4]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[5]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[6]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[7]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/par_bit_reg/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   RST_SYNC_2/sync_rst_reg[0]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   RX_CLK_DIV/counter_reg[0]/SI
+                                0.78           0.68 f        -0.10  (VIOLATED)
+   U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][1]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][2]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[1][3]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[0][0]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][1]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][2]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_ASYN_FIFO/U1_SYNC_R2W/q_reg[1][3]/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   RX_CLK_DIV/div_clk_reg/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   TX_CLK_DIV/div_clk_reg/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_DATA_SYNC/U0_PULSE_GEN/SYNC_REG_reg/SI
+                                0.78           0.69 f        -0.09  (VIOLATED)
+   U0_REG_FILE/RdData_reg[3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_UART/U0_RX/counter_inst/bit_cnt_reg[0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   RX_CLK_DIV/counter_reg[2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   RX_CLK_DIV/counter_reg[3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   RX_CLK_DIV/counter_reg[4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   RX_CLK_DIV/counter_reg[5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   RX_CLK_DIV/counter_reg[6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   TX_CLK_DIV/counter_reg[2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   TX_CLK_DIV/counter_reg[3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   TX_CLK_DIV/counter_reg[4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   TX_CLK_DIV/counter_reg[5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   TX_CLK_DIV/counter_reg[6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_DATA_SYNC/U0_BIT_SYNC/q_reg[0][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_SYS_CTRL/stored_addr_reg[2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_SYS_CTRL/stored_addr_reg[3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/RdData_reg[1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/RdData_reg[4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/RdData_reg[5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/RdData_reg[6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/RdData_reg[7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/RdData_reg[2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][1]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][3]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][5]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][4]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][2]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][6]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[5][7]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][0]/SI
+                                0.78           0.69 f        -0.08  (VIOLATED)
+   U0_SYS_CTRL/cs_reg[2]/SI     0.78           0.69 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/counter_reg[0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[7][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[1][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[8][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[12][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[7][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[3][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[9][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[13][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[0][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[1][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[6][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_RD/r_ptr_reg[0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[11][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_SYS_CTRL/cs_reg[0]/SI     0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[5]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/P_DATA_Valid_reg[7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[6][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[4][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[5][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][2]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][3]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[10][4]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][6]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[14][7]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_REG_FILE/regfile_reg[15][0]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_RX/samp_inst/samples_reg[1]/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_UART/U0_RX/strt_chk_inst/strt_glitch_reg/SI
+                                0.78           0.70 f        -0.08  (VIOLATED)
+   U0_SYS_CTRL/cs_reg[3]/SI     0.77           0.70 f        -0.07  (VIOLATED)
+   U0_UART/U0_TX/U0_MUX/TX_OUT_reg/SI
+                                0.79           0.72 f        -0.07  (VIOLATED)
+   U0_PULSE_GEN/SYNC_REG_reg/SI
+                                0.77           0.70 f        -0.07  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[7]/SI
+                                0.77           0.70 f        -0.07  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/counter_reg[2]/SI
+                                0.77           0.70 f        -0.07  (VIOLATED)
+   RX_CLK_DIV/counter_reg[1]/SI
+                                0.77           0.70 f        -0.07  (VIOLATED)
+   TX_CLK_DIV/counter_reg[1]/SI
+                                0.77           0.70 f        -0.07  (VIOLATED)
+   U0_REG_FILE/regfile_reg[0][6]/SI
+                                0.77           0.71 f        -0.07  (VIOLATED)
+   U0_UART/U0_RX/samp_inst/samples_reg[2]/SI
+                                0.77           0.71 f        -0.07  (VIOLATED)
+   RX_CLK_DIV/odd_flag_toggle_reg/SI
+                                0.77           0.71 f        -0.07  (VIOLATED)
+   TX_CLK_DIV/odd_flag_toggle_reg/SI
+                                0.77           0.71 f        -0.07  (VIOLATED)
+   U0_SYS_CTRL/cs_reg[1]/SI     0.77           0.71 f        -0.06  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[0]/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   TX_CLK_DIV/counter_reg[0]/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   U0_UART/U0_TX/U0_FSM/busy_reg/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_MEM_CNTRL/fifo_reg[2][2]/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   U0_UART/U0_RX/par_chk_inst/par_err_reg/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   U0_UART/U0_RX/fsm_inst/cs_reg[2]/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   U0_REG_FILE/regfile_reg[2][6]/SI
+                                0.77           0.71 f        -0.06  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[1]/SI
+                                0.77           0.72 f        -0.06  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[6]/SI
+                                0.77           0.72 f        -0.05  (VIOLATED)
+   U0_UART/U0_TX/U0_PARITY_CALC/P_DATA_Valid_reg[0]/SI
+                                0.77           0.72 f        -0.05  (VIOLATED)
+   U0_UART/U0_RX/samp_inst/sampled_bit_reg/SI
+                                0.77           0.72 f        -0.05  (VIOLATED)
+   U0_REG_FILE/RdData_reg[0]/SI
+                                0.77           0.72 f        -0.05  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[4]/SI
+                                0.77           0.72 f        -0.05  (VIOLATED)
+   U0_UART/U0_TX/U0_SER/counter_reg[1]/SI
+                                0.77           0.72 f        -0.05  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[7]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_UART/U0_RX/fsm_inst/cs_reg[0]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[2]/SI
+                                0.80           0.76 f        -0.04  (VIOLATED)
+   U0_UART/U0_TX/U0_FSM/cs_reg[2]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_UART/U0_TX/U0_FSM/cs_reg[0]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_SYS_CTRL/stored_addr_reg[0]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[6]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_REG_FILE/regfile_reg[3][1]/SI
+                                0.77           0.72 f        -0.04  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[5]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[4]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[5]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[3]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[1]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_UART/U0_RX/deser_inst/P_DATA_reg[2]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_REG_FILE/regfile_reg[4][0]/SI
+                                0.77           0.73 f        -0.04  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[2]/SI
+                                0.76           0.73 f        -0.03  (VIOLATED)
+   U0_REG_FILE/regfile_reg[3][5]/SI
+                                0.78           0.75 f        -0.03  (VIOLATED)
+   U0_REG_FILE/regfile_reg[2][2]/SI
+                                0.76           0.73 f        -0.03  (VIOLATED)
+   U0_DATA_SYNC/sync_bus_reg[0]/SI
+                                0.76           0.73 f        -0.03  (VIOLATED)
+   U0_ASYN_FIFO/U0_FIFO_WR/w_ptr_reg[0]/SI
+                                0.76           0.73 f        -0.03  (VIOLATED)
+   U0_UART/U0_RX/samp_inst/samples_reg[0]/SI
+                                0.76           0.74 f        -0.03  (VIOLATED)
+   U0_UART/U0_TX/U0_FSM/cs_reg[1]/SI
+                                0.76           0.74 f        -0.03  (VIOLATED)
+   U0_UART/U0_RX/counter_inst/bit_cnt_reg[2]/SI
+                                0.76           0.74 f        -0.03  (VIOLATED)
+   U0_UART/U0_RX/counter_inst/edge_cnt_reg[0]/SI
+                                0.76           0.74 f        -0.02  (VIOLATED)
+   U0_REG_FILE/regfile_reg[3][0]/SI
+                                0.77           0.75 f        -0.02  (VIOLATED)
+   U0_REG_FILE/regfile_reg[3][3]/SI
+                                0.76           0.74 f        -0.02  (VIOLATED)
+   U0_UART/U0_RX/counter_inst/edge_cnt_reg[1]/SI
+                                0.76           0.75 f        -0.01  (VIOLATED)
+   U0_UART/U0_RX/counter_inst/edge_cnt_reg[2]/SI
+                                0.76           0.75 f        -0.01  (VIOLATED)
+   U0_REG_FILE/regfile_reg[3][4]/SI
+                                0.76           0.75 f        -0.01  (VIOLATED)
+   U0_ASYN_FIFO/U0_SYNC_W2R/q_reg[0][1]/SI
+                                0.79           0.78 f        -0.01  (VIOLATED)
+   U0_REG_FILE/regfile_reg[3][7]/SI
+                                0.76           0.75 f        -0.01  (VIOLATED)
+   U0_UART/U0_RX/counter_inst/bit_cnt_reg[1]/SI
+                                0.76           0.75 f         0.00  (VIOLATED: increase significant digits)
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   U0_REG_FILE/n41              0.50           0.58          -0.08  (VIOLATED)
+       PIN :   U0_REG_FILE/U358/INP
+                                0.50           0.58          -0.08  (VIOLATED)
+       PIN :   U0_REG_FILE/U355/S
+                                0.50           0.58          -0.08  (VIOLATED)
+       PIN :   U0_REG_FILE/U353/S
+                                0.50           0.58          -0.08  (VIOLATED)
+       PIN :   U0_REG_FILE/U350/S
+                                0.50           0.58          -0.08  (VIOLATED)
+       PIN :   U0_REG_FILE/U242/INP
+                                0.50           0.58          -0.08  (VIOLATED)
+       PIN :   U0_REG_FILE/U400/QN
+                                0.50           0.58          -0.08  (VIOLATED)
+   U0_REG_FILE/n290             0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U310/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U302/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U294/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U286/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U318/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U326/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U336/IN2
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U345/IN1
+                                0.50           0.54          -0.04  (VIOLATED)
+       PIN :   U0_REG_FILE/U48/QN
+                                0.50           0.54          -0.04  (VIOLATED)
+   UART_CONFIG[3]               0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/samp_inst/U3/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/samp_inst/U9/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/samp_inst/U10/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/samp_inst/U15/B0
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/samp_inst/U17/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/samp_inst/U33/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/counter_inst/U7/IN1
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/counter_inst/U37/IN1
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/fsm_inst/U7/IN1
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_UART/U0_RX/fsm_inst/U8/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/regfile_reg[2][4]/SI
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/regfile_reg[2][3]/Q
+                                0.50           0.51          -0.01  (VIOLATED)
+       PIN :   Mux3x1/U19/IN2
+                                0.50           0.51          -0.01  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      3                  -0.14  
+
+   max_fanout
+
+                             Required        Actual
+   Net                        Fanout         Fanout          Slack
+   -----------------------------------------------------------------
+   n26                          8.00          11.00          -3.00  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      1                  -3.00  
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   SYSTEM_TOP                   0.00       31669.97       -31669.97 (VIOLATED)
+
+
+1

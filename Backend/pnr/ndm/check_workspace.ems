@@ -1,0 +1,27 @@
+<Database>
+Name/home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/ndm/check_workspace.ems
+Creation TimeThu Aug 28 04:45:39 2025
+Modified TimeThu Aug 28 04:45:40 2025
+Design Name
+Library Name
+</Database>
+<RuleCount>
+LM-0051
+LM-0062
+LM-0342
+LM-0501
+LM-0523
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+LM-006para1saed90nm_max10para2310para3arc10
+LM-006para1saed90nm_min10para2310para3arc10
+LM-034para122410para2s10para3224 with a design view (212 had ports reordered);10
+LM-052para111610para2s10
+LM-005
+LM-034para11210para2s10para312 with a design view (12 had ports reordered);10
+LM-052para132810para2s10
+LM-050para110410para2s10
+LM-052para123610para2s10
+</Messages>

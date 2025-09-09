@@ -1,0 +1,23 @@
+****************************************
+Report : report_pin_placement
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 14:32:34 2025
+****************************************
+block SYSTEM_TOP pin RX_IN layer M2 side 1 offset 133.88
+block SYSTEM_TOP pin FUN_REF_CLK layer M3 side 2 offset 89.36
+block SYSTEM_TOP pin FUN_UART_CLK layer M3 side 2 offset 179.6
+block SYSTEM_TOP pin FUN_RST layer M3 side 4 offset 134.16
+block SYSTEM_TOP pin SCAN_CLK layer M3 side 4 offset 89.36
+block SYSTEM_TOP pin SCAN_RST layer M3 side 4 offset 44.56
+block SYSTEM_TOP pin TEST_MODE layer M3 side 4 offset 179.6
+block SYSTEM_TOP pin TX_OUT layer M2 side 3 offset 133.8
+block SYSTEM_TOP pin SCAN_EN layer M3 side 4 offset 224.4
+block SYSTEM_TOP pin SCAN_IN_1 layer M2 side 1 offset 89.08
+block SYSTEM_TOP pin SCAN_OUT_1 layer M2 side 3 offset 89.32
+block SYSTEM_TOP pin SCAN_IN_2 layer M2 side 1 offset 178.36
+block SYSTEM_TOP pin SCAN_OUT_2 layer M2 side 3 offset 178.6
+block SYSTEM_TOP pin SCAN_IN_3 layer M2 side 1 offset 44.6
+block SYSTEM_TOP pin SCAN_OUT_3 layer M2 side 3 offset 44.52
+block SYSTEM_TOP pin SCAN_IN_4 layer M2 side 1 offset 223.16
+block SYSTEM_TOP pin SCAN_OUT_4 layer M2 side 3 offset 223.08

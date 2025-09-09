@@ -1,0 +1,17 @@
+
+BEGIN INFO
+1PORT@SYSTEM_TOP.REF_CLK@@@@-@@@@REF_CLK@@@@10@@@@../cons/constraints.sgdc:3 
+1PORT@SYSTEM_TOP.UART_CLK@@@@-@@@@UART_CLK@@@@271.267@@@@../cons/constraints.sgdc:4 
+GEN_CLK@SYSTEM_TOP.TX_CLK@@@@SYSTEM_TOP.UART_CLK@@@@32@@@@-@@@@-@@@@-@@@@../cons/constraints.sgdc:5
+2PORT@SYSTEM_TOP.RST@@@@async@@@@0@@@@../cons/constraints.sgdc:6 
+QuasiStatStyle@SYSTEM_TOP@@10@@1@@false@@false@@-
+4PORT@SYSTEM_TOP.RX_IN@@@@ 
+4PORT@SYSTEM_TOP.RST@@@@ 
+7PORT@SYSTEM_TOP.TX_OUT@@@@ 
+1Q@SYSTEM_TOP.RX_IN@@@@Input
+PRIMARYIO@@SYSTEM_TOP@@RX_IN@@RX_IN@@0@@1@@RX_IN@@1@@@@
+PRIMARYIO@@SYSTEM_TOP@@REF_CLK@@REF_CLK@@0@@1@@REF_CLK@@1@@@@
+PRIMARYIO@@SYSTEM_TOP@@UART_CLK@@UART_CLK@@0@@1@@UART_CLK@@1@@@@
+PRIMARYIO@@SYSTEM_TOP@@RST@@RST@@0@@1@@RST@@1@@@@
+PRIMARYIO@@SYSTEM_TOP@@TX_OUT@@TX_OUT@@0@@1@@TX_OUT@@2@@@@
+END INFO

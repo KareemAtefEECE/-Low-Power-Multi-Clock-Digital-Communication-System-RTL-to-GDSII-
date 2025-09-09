@@ -1,0 +1,284 @@
+CRTE_SNAPSHOT_START
+
+SECTION_CRTE_VERSION
+3.0
+
+SECTION_PID
+78866
+
+SECTION_POLLING_INTERVAL
+5
+
+SECTION_DATE_TIME
+Mon Aug 25 06:12:20 CST 2025 (1756073540)
+
+SECTION_OS_VERSION
+osname: Linux
+hostname: IC_EDA
+arch: x86_64
+release_version: 3.10.0-1160.6.1.el7.x86_64
+
+SECTION_IPC_INFO
+
+------ Message Queues --------
+key        msqid      owner      perms      used-bytes   messages    
+
+------ Shared Memory Segments --------
+key        shmid      owner      perms      bytes      nattch     status      
+0x00000000 9          ICer       777        16384      1          dest         
+0x00000000 10         ICer       777        6193152    2          dest         
+0x00000000 32780      ICer       600        524288     2          dest         
+0x00000000 16         ICer       600        524288     2          dest         
+0x00000000 17         ICer       777        6193152    2          dest         
+0x00000000 20         ICer       600        524288     2          dest         
+0x00000000 23         ICer       600        524288     2          dest         
+0x00000000 24         ICer       777        5750784    2          dest         
+0x00000000 31         ICer       600        524288     2          dest         
+0x00000000 65568      ICer       777        5750784    2        SECTION_ULIMIT
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 39141
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 4096
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 4096
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+SECTION_SYSCONF
+_SC_THREAD_SAFE_FUNCTIONS= 200809
+_SC_CLK_TCK= 100
+_SC_OPEN_MAX= 4096
+_SC_PAGE_SIZE= 4096
+_SC_ARG_MAX= 2097152
+_SC_CHILD_MAX= 4096
+_SC_LINE_MAX= 2048
+
+SECTION_FULL_COMMAND
+/home/synopsys/syn/O-2018.06-SP1/linux64/syn/bin/common_shell_exec -shell dc_shell -r /home/synopsys/syn/O-2018.06-SP1 -f syn_script.tcl
+
+SECTION_CPUINFO
+total_core: 8
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+model_name:  AMD Ryzen 5 5625U with Radeon Graphics
+flags:  fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc art rep_good nopl tsc_reliable nonstop_tsc extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw retpoline_amd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec clzero arat pku ospke overflow_recov succor
+cpu_family: 25
+core_frequency_mhz: 2295
+core_per_socket: 0
+stepping: 0
+cache_size_kb: 512
+ht: 0
+
+SECTION_OS_RELEASE_VERSION
+CentOS Linux release 7.9.2009 (Core)
+
+
+SECTION_SYS/VM
+/proc/sys/vm/admin_reserve_kbytes:8192
+/proc/sys/vm/block_dump:0
+/proc/sys/vm/dirty_background_bytes:0
+/proc/sys/vm/dirty_background_ratio:10
+/proc/sys/vm/dirty_bytes:0
+/proc/sys/vm/dirty_expire_centisecs:3000
+/proc/sys/vm/dirty_ratio:30
+/proc/sys/vm/dirty_writeback_centisecs:500
+/proc/sys/vm/drop_caches:0
+/proc/sys/vm/extfrag_threshold:500
+/proc/sys/vm/hugepages_treat_as_movable:0
+/proc/sys/vm/hugetlb_shm_group:0
+/proc/sys/vm/laptop_mode:0
+/proc/sys/vm/legacy_va_layout:0
+/proc/sys/vm/lowmem_reserve_ratio:256	256	32
+/proc/sys/vm/max_map_count:65530
+/proc/sys/vm/memory_failure_early_kill:0
+/proc/sys/vm/memory_failure_recovery:1
+/proc/sys/vm/min_free_kbytes:67584
+/proc/sys/vm/min_slab_ratio:5
+/proc/sys/vm/min_unmapped_ratio:1
+/proc/sys/vm/mmap_min_addr:4096
+/proc/sys/vm/nr_hugepages:0
+/proc/sys/vm/nr_hugepages_mempolicy:0
+/proc/sys/vm/nr_overcommit_hugepages:0
+/proc/sys/vm/nr_pdflush_threads:0
+/proc/sys/vm/numa_zonelist_order:default
+/proc/sys/vm/oom_dump_tasks:1
+/proc/sys/vm/oom_kill_allocating_task:0
+/proc/sys/vm/overcommit_kbytes:0
+/proc/sys/vm/overcommit_memory:0
+/proc/sys/vm/overcommit_ratio:50
+/proc/sys/vm/page-cluster:3
+/proc/sys/vm/panic_on_oom:0
+/proc/sys/vm/percpu_pagelist_fraction:0
+/proc/sys/vm/stat_interval:1
+/proc/sys/vm/swappiness:30
+/proc/sys/vm/user_reserve_kbytes:131072
+/proc/sys/vm/vfs_cache_pressure:100
+/proc/sys/vm/zone_reclaim_mode:0
+
+
+SECTION_SWAP
+swap_partition: /dev/dm-1
+size_gb: 9
+
+CRTE_SNAPSHOT_END
+
+CRTE_PERIODIC_START 1 1756073540180
+
+SECTION_MPSTAT
+total_core: 8
+
+CPU     %user   %kernel %wait   %idle   
+all   3.327147 0.533435 0.005751 96.133667
+0     2.759179 0.454303 0.003033 96.783485
+1     3.790591 0.731925 0.001407 95.476082
+2     3.082056 0.458846 0.002059 96.457039
+3     3.770303 0.599126 0.004000 95.626572
+4     3.704630 0.540600 0.002273 95.752495
+5     2.343370 0.292427 0.029259 97.334946
+6     3.188737 0.487325 0.001733 96.322197
+7     3.974954 0.701863 0.002109 95.321068
+
+SECTION_PID_STATUS
+name: common_shell_ex
+state: 1
+vmsize: 1824460
+vmrss: 291620
+vmdata: 1340508
+vmstk: 200
+vmexe: 250552
+vmlib: 118440
+threads: 1
+
+SECTION_PROCESS_CPU_UTIL
+pid: 78866
+cpu_total_time: 14779511
+cpu_used_time: 283
+cpu_p: 
+
+SECTION_SYSTEM_CPU_UTIL
+sys_cpu_p: 
+
+SECTION_MEMINFO
+memtotal: 10054444
+memfree: 5870068
+cached: 1839232
+swapcached: 0
+active: 1899148
+swaptotal: 10481660
+swapfree: 10481660
+
+SECTION_SMAPS
+shared_kb: 2624
+private_kb: 289004
+
+SECTION_DF
+Filesystem  Size  Used Avail Use%
+filesystem        19G  6G  13G    34
+
+Filesystem    Inodes   IUsed   IFree   IUse%
+filesystem          10485760  192451 10293309   4294962048
+
+SECTION_CWD
+Filesystem  Size  Used Avail Use%
+filesystem        168G  120G  48G    72
+
+Filesystem    Inodes   IUsed   IFree   IUse%
+filesystem          88604672  998334 87606338   4294967226
+
+SECTION_SWAP_RATE
+blk_read: 4408
+blk_wrtn: 0
+swap_in_rate: 
+swap_out_rate: 
+swap_in_rate: 
+swap_out_rate: 
+
+SECTION_FD_SIZE
+files: 13
+total_size: 318170133
+
+SECTION_NET_INTERFACE
+total_eth_avbl: 3
+
+name net_rx_err net_rx_drp net_tx_err net_tx_drp 
+    lo:         0        0        0        0
+virbr0-nic:               0        0        0        0
+virbr0:               0        0        0        0
+
+SECTION_NFSSTAT
+Error: Could not collect the data.
+
+SECTION_THREAD_CPU_UTIL
+78866 : 78866 (common_shell_ex) R 70648 78866 70648 34816 78866 4202496 179133 15143 0 0 253 23 2 5 20 0 1 0 1867466 1868247040 72905 18446744073709551615 4194304 260758180 140729727679520 140729727654904 140118629128000 0 1024 4096 1132490495 0 0 0 17 7 0 0 0 0 0 262857712 276090392 1465991168 140729727682147 140729727682284 140729727682284 140729727688629 0
+
+CRTE_PERIODIC_END 1 1756073540180

@@ -1,0 +1,73 @@
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+************************************************************
+Warning: Corner default:  0 process number, 0 process label, 1 voltage, and 1 temperature mismatches. (PVT-030)
+Warning: 1 cells affected for early, 0 for late. (PVT-031)
+Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034)
+****************************************
+Report : cell
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 14:32:32 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model
+    U - Unbound (missing)
+    s - user size_only
+    S - implicit size_only
+    d - user dont_touch
+    D - derived dont_touch
+    o - synthetic operator
+
+
+Cell                      Reference       Library          Attributes
+--------------------------------------------------------------------------------
+Mux3x1                    Prescale_mux                     h
+RST_SYNC_1                RST_SYNC_0                       h
+RST_SYNC_2                RST_SYNC_1                       h
+RX_CLK_DIV                ClkDiv_1                         h
+TX_CLK_DIV                ClkDiv_0                         h
+U0_ALU                    ALU                              h
+U0_ASYN_FIFO              ASYNC_FIFO                       h
+U0_CLK_GATE               CLK_GATE                         h
+U0_DATA_SYNC              DATA_SYNC                        h
+U0_MUX2x1                 Mux2x1_1                         h
+U0_PULSE_GEN              PULSE_GEN_0                      h
+U0_REG_FILE               REG_FILE                         h
+U0_SYS_CTRL               SYS_CTRL                         h
+U0_UART                   UART                             h
+U10                       NBUFFX2         saed90nm_m       
+U11                       INVX1           saed90nm_m       
+U17                       NBUFFX32        saed90nm_m       
+U18                       NBUFFX32        saed90nm_m       
+U19                       NBUFFX32        saed90nm_m       
+U1_MUX2x1                 Mux2x1_4                         h
+U2_MUX2x1                 Mux2x1_3                         h
+U3                        INVX1           saed90nm_m       
+U3_MUX2x1                 Mux2x1_2                         h
+U4                        INVX1           saed90nm_m       
+U4_MUX2x1                 Mux2x1_0                         h
+U5                        INVX0           saed90nm_m       
+U5_MUX2x1                 Mux2x1_6                         h
+U6                        INVX1           saed90nm_m       
+U6_MUX2x1                 Mux2x1_5                         h
+U7                        NBUFFX2         saed90nm_m       
+U8                        NBUFFX2         saed90nm_m       
+U9                        NBUFFX2         saed90nm_m       
+--------------------------------------------------------------------------------
+Total 32 cells
+
+1

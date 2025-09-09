@@ -1,0 +1,26 @@
+****************************************
+ Report : target skew and latency
+ Design : SYSTEM_TOP
+ Date   : Wed Sep  3 19:16:48 2025
+****************************************
+
+##Target Skew
+
+Clock                        Corner                        Target
+-----------------------------------------------------------------
+FUN_REF_CLK (mode default)   default                       0.01
+FUN_UART_CLK (mode default)  default                       0.2
+
+##Target Latency
+
+Clock                        Corner                        Target
+-----------------------------------------------------------------
+FUN_REF_CLK (mode default)   default                       0.5
+FUN_UART_CLK (mode default)  default                       0
+
+##Max Level Count
+
+Clock                                  Count
+-----------------------------------------------------------------
+No max level constraints found.
+1

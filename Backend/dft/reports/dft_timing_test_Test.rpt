@@ -1,0 +1,84 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 04:25:12 2025
+****************************************
+
+Operating Conditions: WORST   Library: saed90nm_max
+Wire Load Model Mode: enclosed
+
+  Startpoint: U0_ALU/ALU_OUT_reg[0]
+              (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Endpoint: U0_ALU/ALU_OUT_reg[1]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SYSTEM_TOP         ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock ALU_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U0_ALU/ALU_OUT_reg[0]/CLK (SDFFARX2)                    0.00       0.00 r
+  U0_ALU/ALU_OUT_reg[0]/Q (SDFFARX2)                      0.81       0.81 f
+  U0_ALU/ALU_OUT_reg[1]/SI (SDFFARX1)                     0.16       0.96 f
+  data arrival time                                                  0.96
+
+  clock ALU_CLK (rise edge)                              10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.20       9.80
+  U0_ALU/ALU_OUT_reg[1]/CLK (SDFFARX1)                    0.00       9.80 r
+  library setup time                                     -0.65       9.15
+  data required time                                                 9.15
+  --------------------------------------------------------------------------
+  data required time                                                 9.15
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (MET)                                                        8.19
+
+
+  Startpoint: U0_UART/U0_TX/U0_MUX/TX_OUT_reg
+              (rising edge-triggered flip-flop clocked by SCAN_CLK)
+  Endpoint: SCAN_OUT_4 (output port clocked by SCAN_CLK)
+  Path Group: SCAN_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  SYSTEM_TOP         ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock SCAN_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  U0_UART/U0_TX/U0_MUX/TX_OUT_reg/CLK (SDFFASX1)          0.00       0.00 r
+  U0_UART/U0_TX/U0_MUX/TX_OUT_reg/Q (SDFFASX1)            0.79       0.79 r
+  U0_UART/U0_TX/U0_MUX/TX_OUT (mux4x1)                    0.00       0.79 r
+  U0_UART/U0_TX/TX_OUT (UART_TX)                          0.00       0.79 r
+  U0_UART/TX_OUT_S (UART)                                 0.00       0.79 r
+  U17/Z (NBUFFX32)                                        0.99       1.78 r
+  SCAN_OUT_4 (out)                                        0.01       1.79 r
+  data arrival time                                                  1.79
+
+  clock SCAN_CLK (rise edge)                            100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  clock uncertainty                                      -1.20      98.80
+  output external delay                                 -20.00      78.80
+  data required time                                                78.80
+  --------------------------------------------------------------------------
+  data required time                                                78.80
+  data arrival time                                                 -1.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                       77.01
+
+
+1

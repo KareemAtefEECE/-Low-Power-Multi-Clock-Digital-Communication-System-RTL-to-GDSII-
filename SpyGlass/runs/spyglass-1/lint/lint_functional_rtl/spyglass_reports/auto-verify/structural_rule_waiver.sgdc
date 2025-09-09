@@ -1,0 +1,1 @@
+waive -rule W164a -msg q%LHS: 'half_edges' width 5 is less than RHS: '(prescale >> 1)' width 6 in assignment [Hierarchy: ':SYSTEM_TOP:U0_UART@UART:U0_RX@UART_RX:samp_inst@data_sampling']%

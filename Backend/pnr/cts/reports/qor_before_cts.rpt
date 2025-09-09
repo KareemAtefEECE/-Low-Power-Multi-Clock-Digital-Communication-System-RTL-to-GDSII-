@@ -1,0 +1,121 @@
+****************************************
+Report : qor
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Sat Aug 30 21:23:05 2025
+****************************************
+Information: Timer using 'CRPR'. (TIM-050)
+
+
+Scenario           'default'
+Timing Path Group  'FUN_REF_CLK'
+----------------------------------------
+Levels of Logic:                     18
+Critical Path Length:              4.77
+Critical Path Slack:               4.40
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.22
+Total Hold Violation:            -13.08
+No. of Hold Violations:             230
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'FUN_UART_CLK'
+----------------------------------------
+Levels of Logic:                      7
+Critical Path Length:              3.18
+Critical Path Slack:             267.27
+Critical Path Clk Period:        271.27
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.22
+Total Hold Violation:             -3.11
+No. of Hold Violations:              18
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'FUN_TX_CLK'
+----------------------------------------
+Levels of Logic:                      4
+Critical Path Length:              1.91
+Critical Path Slack:             269.22
+Critical Path Clk Period:       8680.54
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.23
+Total Hold Violation:             -4.66
+No. of Hold Violations:              37
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'FUN_RX_CLK'
+----------------------------------------
+Levels of Logic:                      3
+Critical Path Length:             54.89
+Critical Path Slack:             215.55
+Critical Path Clk Period:        271.27
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.15
+Total Hold Violation:             -3.99
+No. of Hold Violations:              28
+----------------------------------------
+
+Scenario           'default'
+Timing Path Group  'ALU_CLK'
+----------------------------------------
+Levels of Logic:                     24
+Critical Path Length:              6.75
+Critical Path Slack:               2.41
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+Worst Hold Violation:             -0.22
+Total Hold Violation:             -3.70
+No. of Hold Violations:              17
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:             47
+Hierarchical Port Count:           1135
+Leaf Cell Count:                   2243
+Buf/Inv Cell Count:                 663
+Buf Cell Count:                     233
+Inv Cell Count:                     430
+CT Buf/Inv Cell Count:                0
+Combinational Cell Count:          1904
+Sequential Cell Count:              339
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:            18580.38
+Noncombinational Area:         12806.55
+Buf/Inv Area:                   4383.13
+Total Buffer Area:              1838.59
+Total Inverter Area:            2544.54
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                       0.00
+Net YLength:                       0.00
+----------------------------------------
+Cell Area (netlist):                          31386.93
+Cell Area (netlist and physical only):        31386.93
+Net Length:                        0.00
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:              2401
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

@@ -1,0 +1,209 @@
+open_project /home/ICer/Projects/Digital_System(RTL-to-GDSII)/spyglass/runs/system_top_spyglass.prj
+run_goal
+
+close_project -force
+open_project /home/ICer/Projects/Digital_System(RTL-to-GDSII)/spyglass/runs/system_top_spyglass.prj
+run_goal
+
+gui_select_message -rule SGDC_generated_clock06 -msg {Parameter 'enable_generated_clocks' not set to yes. Ignoring  'generated_clock' constraints}
+run_goal
+
+close_project -force
+open_project /home/ICer/Projects/Digital_System(RTL-to-GDSII)/spyglass/runs/system_top_spyglass.prj
+run_goal
+
+run_goal
+
+run_goal
+
+run_goal
+
+read_file -type awl ./system_top_spyglass/cdc/cdc_setup_check/system_top_spyglass_waiver_file.awl
+set_goal_option default_waiver_file ./system_top_spyglass/cdc/cdc_setup_check/system_top_spyglass_waiver_file.awl
+read_file -type awl ./system_top_spyglass/cdc/cdc_setup_check/system_top_spyglass_waiver_file.awl
+set_goal_option default_waiver_file ./system_top_spyglass/cdc/cdc_setup_check/system_top_spyglass_waiver_file.awl
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Setup_port01 -msg {Port coverage for top design unit 'SYSTEM_TOP' is: '1' (25.00 %) port(s) not fully constrained} -comment {Created by ICer on 24-Aug-2025 22:24:47}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Setup_port01 -msg {Abstracted sgdc file for input ports of block 'SYSTEM_TOP' is generated} -comment {Created by ICer on 24-Aug-2025 22:25:01}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+current_goal cdc/clock_reset_integrity -alltop
+
+
+run_goal
+
+current_goal cdc/cdc_verify_struct -alltop
+
+
+run_goal
+
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_open_schematic -ms
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.strt_chk_inst.strt_glitch, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+gui_select_message -rule Ac_unsync01 -msg {Unsynchronized Crossing: destination flop SYSTEM_TOP.U0_UART.U0_RX.stp_chk_inst.stp_err, clocked by SYSTEM_TOP.UART_CLK, source flop SYSTEM_TOP.U0_REG_FILE.regfile[2][7:3], clocked by SYSTEM_TOP.REF_CLK. Reason: Qualifier not found [Total Sources: 1 (Number of source domains: 1)]}
+read_file -type awl ./system_top_spyglass/cdc/cdc_verify_struct/system_top_spyglass_waiver_file.awl
+set_goal_option default_waiver_file ./system_top_spyglass/cdc/cdc_verify_struct/system_top_spyglass_waiver_file.awl
+read_file -type awl ./system_top_spyglass/cdc/cdc_verify_struct/system_top_spyglass_waiver_file.awl
+set_goal_option default_waiver_file ./system_top_spyglass/cdc/cdc_verify_struct/system_top_spyglass_waiver_file.awl
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Ac_conv01 -msg {5 synchronizers (SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][1:0],SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][3:2] ...) converge on MUX 'SYSTEM_TOP.WR_DATA[0]' (same source divergence)} -comment {Created by ICer on 24-Aug-2025 23:24:54}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Ac_conv02 -comment {Created by ICer on 24-Aug-2025 23:25:08}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Ac_conv04 -comment {Created by ICer on 24-Aug-2025 23:25:28}
+waive -rule Ac_coherency06 -comment {Created by ICer on 24-Aug-2025 23:25:28}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Ac_glitch03 -msg {Destination flop 'SYSTEM_TOP.U0_DATA_SYNC.U0_BIT_SYNC.q[0][0]' clocked by 'SYSTEM_TOP.REF_CLK' can glitch (2 source(s), 1 domain(s)). Reason :'Source reconverges'} -comment {Created by ICer on 24-Aug-2025 23:27:55}
+waive -rule Ac_glitch03 -msg {Destination flop 'SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.q[0][2:0]' clocked by 'SYSTEM_TOP.REF_CLK' can glitch (1 source(s), 1 domain(s)). Reason :'Sources from same domain in fanin'} -comment {Created by ICer on 24-Aug-2025 23:27:55}
+waive -rule Ac_glitch03 -msg {Destination flop 'SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R.q[0][2:0]' clocked by 'SYSTEM_TOP.TX_CLK' can glitch (1 source(s), 1 domain(s)). Reason :'Sources from same domain in fanin'} -comment {Created by ICer on 24-Aug-2025 23:27:55}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Setup_port01 -comment {Created by ICer on 24-Aug-2025 23:28:07}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+current_goal cdc/cdc_setup_check -alltop
+
+
+current_goal cdc/clock_reset_integrity -alltop
+
+
+read_file -type awl ./system_top_spyglass/cdc/clock_reset_integrity/system_top_spyglass_waiver_file.awl
+set_goal_option default_waiver_file ./system_top_spyglass/cdc/clock_reset_integrity/system_top_spyglass_waiver_file.awl
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Clock_glitch04 -comment {Created by ICer on 24-Aug-2025 23:30:51}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+current_goal cdc/cdc_verify_struct -alltop
+
+
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Ac_unsync01 -comment {Created by ICer on 24-Aug-2025 23:36:40}
+waive -rule Ac_unsync02 -comment {Created by ICer on 24-Aug-2025 23:36:40}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+run_goal
+
+current_goal cdc/cdc_verify -alltop
+
+
+run_goal
+
+current_goal cdc/cdc_abstract -alltop
+
+
+run_goal
+
+
+
+current_goal rdc/rdc_verify_struct -alltop
+run_goal
+
+
+
+
+read_file -type awl ./system_top_spyglass/rdc/rdc_verify_struct/system_top_spyglass_waiver_file.awl
+set_goal_option default_waiver_file ./system_top_spyglass/rdc/rdc_verify_struct/system_top_spyglass_waiver_file.awl
+
+set _sg_current_default_waiver_file ""; set _sg_current_default_waiver_file [get_goal_option default_waiver_file]
+waive -rule Setup_port01 -comment {Created by ICer on 24-Aug-2025 23:41:31}
+if {$_sg_current_default_waiver_file == {} || $_sg_current_default_waiver_file == {{}}} {remove_goal_option default_waiver_file } else { set_goal_option default_waiver_file $_sg_current_default_waiver_file}
+
+
+
+save_waiver
+
+
+
+run_goal
+
+save_project
+save_project
+gui_exit
+gui_exit

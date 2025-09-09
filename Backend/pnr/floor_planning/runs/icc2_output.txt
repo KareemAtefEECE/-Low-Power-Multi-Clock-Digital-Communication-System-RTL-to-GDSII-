@@ -1,0 +1,32 @@
+
+icc2_shell> set design SYSTEM_TOP
+SYSTEM_TOP
+icc2_shell> 
+icc2_shell> # remove the .lock file
+icc2_shell> sh rm /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/design_library/${design}.dlib/${design}_fp/design.ndm.lock
+Error: sh: -c: line 0: syntax error near unexpected token `('
+sh: -c: line 0: `rm /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/design_library/SYSTEM_TOP.dlib/SYSTEM_TOP_fp/design.ndm.lock'
+        Use error_info for more info. (CMD-013)
+icc2_shell> 
+icc2_shell> 
+icc2_shell> set design_lib_path /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/design_library
+/home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/design_library
+icc2_shell> open_block $design_lib_path/${design}.dlib:${design}_fp.design
+Information: User units loaded from library 'saed90nm_m' (LNK-040)
+Opening block 'SYSTEM_TOP.dlib:SYSTEM_TOP_fp.design' in edit mode
+{SYSTEM_TOP.dlib:SYSTEM_TOP_fp.design}
+icc2_shell> start_gui
+Begin building search trees for block SYSTEM_TOP.dlib:SYSTEM_TOP_fp.design
+Done building search trees for block SYSTEM_TOP.dlib:SYSTEM_TOP_fp.design (time 0s)
+icc2_shell> link_block
+Using libraries: SYSTEM_TOP.dlib saed90nm_m saed90nm_max_cg
+Warning: In library SYSTEM_TOP.dlib, no block views exist for block SYSTEM_TOP. (LNK-064)
+Visiting block SYSTEM_TOP.dlib:SYSTEM_TOP_fp.design
+Design 'SYSTEM_TOP' was successfully linked.
+1
+icc2_shell> exit
+Maximum memory usage for this session: 209.39 MB
+CPU usage for this session:     10 seconds (  0.00 hours)
+Elapsed time for this session:    578 seconds (  0.16 hours)
+Thank you for using IC Compiler II.
+

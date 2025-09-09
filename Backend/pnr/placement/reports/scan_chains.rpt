@@ -1,0 +1,18 @@
+****************************************
+Report : SCANDEF check
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 16:43:58 2025
+****************************************
+  Checking between SCANDEF file and design:
+
+  Total PARTITION group count: 1
+  Total SCANCHAINS checked: 4
+  VALIDATED :  4
+  FAILED    :  0
+
+  Chain name     Status    #cells    #bits     PARTITION      Scan in        Scan out
+  1              V         85        85        SCAN_CLK_45_45 SCAN_IN_1      SCAN_OUT_1
+  2              V         85        85        SCAN_CLK_45_45 SCAN_IN_2      SCAN_OUT_2
+  3              V         84        84        SCAN_CLK_45_45 SCAN_IN_3      SCAN_OUT_3
+  4              V         84        84        SCAN_CLK_45_45 SCAN_IN_4      SCAN_OUT_4

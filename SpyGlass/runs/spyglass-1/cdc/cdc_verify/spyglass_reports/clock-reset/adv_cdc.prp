@@ -1,0 +1,30 @@
+################################################################################
+#
+# Purpose: 
+#   This file specifies the assertion details along with their run status.
+#   Functional analysis is done only for those assertions that are enabled
+#   in the property file.
+#
+# Format: 
+#   
+#   RuleName: <rule-name>
+#   <selection> <type> <status> <file-name> <line-num> <hier> [ <info> ]
+#   .....
+#   
+#   
+################################################################################
+RuleName: Ac_conv02 
+off  Assertion   PROVED              ../rtl/SYSTEM_TOP.v  178  "SYSTEM_TOP"  [SYSTEM_TOP.F_EMPTY]
+on   Assertion   Partially-Proved    ../rtl/SYSTEM_TOP.v  177  "SYSTEM_TOP"  [SYSTEM_TOP.F_FULL]
+
+RuleName: Ac_cdc01a 
+on   Assertion   Partially-Proved    ../rtl/BIT_SYNC.v  25  "SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R"  [SFlop:SYSTEM_TOP.U0_ASYN_FIFO.U0_FIFO_WR.w_ptr[3] SClk:SYSTEM_TOP.REF_CLK DFlop:SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R.q[0][3] DClk:SYSTEM_TOP.UART_CLK]
+
+RuleName: Ac_datahold01a 
+off  Assertion   PROVED              ../rtl/DATA_SYNC.v  44  "SYSTEM_TOP.U0_DATA_SYNC"  [Des: "SYSTEM_TOP.U0_DATA_SYNC.\sync_bus_reg[0] .Q", Src: "SYSTEM_TOP.U0_UART.U0_RX.deser_inst.\P_DATA_reg[0] .Q"]
+on   Assertion   Partially-Proved    ../rtl/serializer.v  19  "SYSTEM_TOP.U0_UART.U0_TX.U0_SER"  [Des: "SYSTEM_TOP.U0_UART.U0_TX.U0_SER.\P_DATA_Valid_reg[0] .Q", Src: "SYSTEM_TOP.U0_ASYN_FIFO.U0_FIFO_MEM_CNTRL.\fifo_reg[7][0] .Q"]
+on   Assertion   Partially-Proved    ../rtl/parity_calc.v  19  "SYSTEM_TOP.U0_UART.U0_TX.U0_PARITY_CALC"  [Des: "SYSTEM_TOP.U0_UART.U0_TX.U0_PARITY_CALC.\P_DATA_Valid_reg[0] .Q", Src: "SYSTEM_TOP.U0_ASYN_FIFO.U0_FIFO_MEM_CNTRL.\fifo_reg[7][0] .Q"]
+
+RuleName: Ac_glitch03 
+on   Assertion   Partially-Proved    ../rtl/BIT_SYNC.v  25  "SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W"  [SYSTEM_TOP.U0_ASYN_FIFO.U1_SYNC_R2W.\q_reg[0][2] .D]
+on   Assertion   Partially-Proved    ../rtl/BIT_SYNC.v  25  "SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R"  [SYSTEM_TOP.U0_ASYN_FIFO.U0_SYNC_W2R.\q_reg[0][2] .D]

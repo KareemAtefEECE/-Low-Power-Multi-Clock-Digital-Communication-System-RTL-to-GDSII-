@@ -1,0 +1,23 @@
+****************************************
+Report : port
+Module : SYSTEM_TOP
+Mode   : default
+Corner : default
+Scenario: default
+Version: O-2018.06-SP1
+Date   : Wed Sep  3 14:32:32 2025
+****************************************
+                      Pin Cap                    Wire Cap
+                   Min          Max           Min          Max
+Port      Dir    rise/fall    rise/fall     rise/fall    rise/fall    Attributes
+--------------------------------------------------------------------------------
+SCAN_OUT_1
+          out    0.50/0.50    0.50/0.50     0.00/0.00    0.00/0.00
+SCAN_OUT_2
+          out    0.50/0.50    0.50/0.50     0.00/0.00    0.00/0.00
+SCAN_OUT_3
+          out    0.50/0.50    0.50/0.50     0.00/0.00    0.00/0.00
+SCAN_OUT_4
+          out    0.50/0.50    0.50/0.50     0.00/0.00    0.00/0.00
+TX_OUT    out    0.50/0.50    0.50/0.50     0.00/0.00    0.00/0.00
+1

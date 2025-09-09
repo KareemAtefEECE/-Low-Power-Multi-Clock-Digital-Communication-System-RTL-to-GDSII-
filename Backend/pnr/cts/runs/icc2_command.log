@@ -1,0 +1,294 @@
+#@ # 
+#@ # Running icc2_shell Version O-2018.06-SP1 for linux64 -- Jul 17, 2018
+#@ # Date:   Sun Sep  7 15:11:08 2025
+#@ # Run by: ICer@IC_EDA
+#@ 
+
+set design SYSTEM_TOP
+# remove the .lock file
+sh rm /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/design_library/${design}.dlib/${design}_cts/design.ndm.lock
+set design_lib_path /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/design_library
+open_block $design_lib_path/${design}.dlib:${design}_cts.design
+copy_block -from_block ${design}.dlib:${design}_pl.design -to_block ${design}_cts
+current_block ${design}_cts.design
+start_gui
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+link_block
+check_design -checks pre_clock_tree_stage
+suppress_message -force CMD-013
+suppress_message -force CMD-013; report_design_mismatch -check_design >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; check_scan_chain >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; check_mv_design >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; check_legality >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; design_extraction_check >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; check_timing >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; check_clock_trees >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+suppress_message -force CMD-013; check_hier_design -stage pre_clock_tree >> /home/ICer/Projects/Digital_System(RTL-to-GDSII)/pnr/cts/runs/check_design2025Sep07151147.log
+unsuppress_message CMD-013
+# Use the check_clock_trees command before clock tree synthesis to check for common problems that might impact clock tree synthesis.
+check_clock_trees
+set_attribute [get_lib_cells saed90nm_max_cg/CGLPPSX4] dont_touch false
+# --- Reset all option and configration for skew and latency
+# --- ignore M8,M9 as they reserved for the power ring and meshs
+# --- ignore M1 as it reserved for the design signal routing
+# --- therfore any clock routes will be limited from M2 to M7
+set_ignored_layers -max_routing_layer M8 -min_routing_layer M1 -verbose
+# remove any previous definitions for the target skew and latency as we will set new values
+remove_clock_tree_options -all -target_skew -target_latency
+# --- Clock sources
+report_clocks
+report_clock_qor -type structure
+report_clock_timing -type summary
+set_input_transition -rise 0.3 {FUN_REF_CLK FUN_UART_CLK SCAN_CLK}
+set_input_transition -fall 0.2 {FUN_REF_CLK FUN_UART_CLK SCAN_CLK}
+# ================================================ #
+# ============== Clock_Exceptions ================ #
+# ================================================ #
+set_lib_cell_purpose -exclude cts [get_lib_cells -of [get_cells *]]
+# ================================================ #
+# ================= CTS_Cells ==================== #
+# ================================================ #
+# ----- Prefred ( High drive strength and INV Cells )
+# ----- INV Prefred to resisitance of wire interconnect and trainstions
+# --- we used high driving strength inverters due to the non-existing of cts buffers
+set_lib_cell_purpose -include cts */INVX2 ; # This prefred Cell high Drive strength
+set_lib_cell_purpose -include cts */INVX4
+set_lib_cell_purpose -include cts */*INVX8 ;
+set_lib_cell_purpose -include cts */*INVX16 ;
+# use this to solve hold violations
+set_lib_cell_purpose -include hold [get_lib_cells */IBUFFX2] ;
+set_lib_cell_purpose -include hold [get_lib_cells */IBUFFX4] ;
+set_lib_cell_purpose -include hold [get_lib_cells */NBUFFX2] ;
+set_lib_cell_purpose -include hold [get_lib_cells */NBUFFX4] ;
+set_lib_cell_purpose -include hold [get_lib_cells */INVX1]
+set_lib_cell_purpose -include hold [get_lib_cells */INVX2]
+set_lib_cell_purpose -include hold [get_lib_cells */INVX4]
+set_clock_tree_options -clock [get_clocks FUN_REF_CLK] -target_skew 0.01 -target_latency 0.5
+set_clock_tree_options -clock [get_clocks FUN_UART_CLK] -target_skew 0.2 -target_latency 0
+# ================================================ #
+# ====================== NDR ===================== #
+# ================================================ #
+# defines non-default routing rules in the design.
+create_routing_rule clk_network_NDR -multiplier_spacing 2 -multiplier_width 2
+# ----- root:from port to first buffer
+set_clock_routing_rules -net_type root -rules clk_network_NDR -max_routing_layer M7 -min_routing_layer M2
+# ----- internal : from first buffer to last buffer before sink
+set_clock_routing_rules -net_type internal -rules clk_network_NDR -max_routing_layer M7 -min_routing_layer M2
+# ----- Sink >> from last buffer to sink(leaf) without NDR
+set_clock_routing_rules -net_type sink -default_rule -max_routing_layer M7 -min_routing_layer M2
+# over all Rules
+report_routing_rules -verbose
+# Special Clock net all Rules
+report_clock_routing_rules
+# ================================================ #
+# ================== DRC/Options ================= #
+# ================================================ #
+set_max_transition -clock_path 0.100 [get_clocks ]
+# since the design has 338 flops increased the max_fanout to prevent too many buffer levels
+set_app_options -as_user_default -list {cts.common.max_fanout 40}
+#set_app_options -name clock_opt.hold.effort -value high
+#set_app_options -name plan.budget.hold_buffer_margin -value 0.05
+set_app_options -name cts.common.user_instance_name_prefix -value "CTS_"
+# ================================================ #
+# ====================== CRP ===================== #
+# ================================================ #
+# --- To reduce On-Chip Variation (OCV) effects, clock trees try to share as many buffers as possible.
+set_app_options -name time.remove_clock_reconvergence_pessimism -value true
+report_clock_settings
+win_set_filter -visible -class cell -filter {hard_macro_margin hard_margin route_blockage_margin soft_margin}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {0-77}
+win_set_filter -expand_cell_types {soft_macro  }
+win_set_select_class -visible {cell port bound routing_blockage shaping_blockage pg_region pin_blockage block_shielding topology_node topology_edge core_area die_area edit_group shape via terminal fill_cell placement_blockage }
+win_set_filter -class cell -filter {cell_array hard_macro_margin hard_margin route_blockage_margin soft_margin}
+win_set_filter -class placement_blockage -filter {wiring} -layer {0-77}
+win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region pin_blockage topology_node topology_edge edit_group shape via placement_blockage }
+set_app_options -list {clock_opt.hold.effort {high}}
+set_app_options -list {opt.timing.effort {high}}
+clock_opt -from build_clock -to build_clock
+synthesize_clock_trees
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+#report_clock_qor -type summary
+clock_opt -from route_clock -to route_clock
+set_app_options -as_user_default -list {route.global.global_route_topology_style 1}
+route_group -all_clock_nets -reuse_existing_global_route true
+set_app_options -as_user_default -list {route.global.global_route_topology_style 0}
+clock_opt -from route_clock -to final_opto
+set_app_options -as_user_default -list {route.global.global_route_topology_style 1}
+route_group -all_clock_nets -reuse_existing_global_route true
+set_app_options -as_user_default -list {route.global.global_route_topology_style 0}
+
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+
+set_app_options -as_user_default -list {route.global.debug_compact_coef 4}
+set_app_options -as_user_default -list {route.global.debug_compact_coef 1}
+
+
+set_app_options -as_user_default -list {route.global.debug_compact_coef 4}
+set_app_options -as_user_default -list {route.global.debug_compact_coef 1}
+
+
+set_app_options -as_user_default -list {route.global.debug_compact_coef 4}
+set_app_options -as_user_default -list {route.global.debug_compact_coef 1}
+route_group -all_clock_nets
+report_timing -delay_type max -max_paths 3
+report_timing -delay_type min -max_paths 3
+clock_opt -from build_clock -to build_clock
+synthesize_clock_trees
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+#report_clock_qor -type summary
+clock_opt -from route_clock -to route_clock
+set_app_options -as_user_default -list {route.global.global_route_topology_style 1}
+route_group -all_clock_nets -reuse_existing_global_route true
+set_app_options -as_user_default -list {route.global.global_route_topology_style 0}
+clock_opt -from route_clock -to final_opto
+set_app_options -as_user_default -list {route.global.global_route_topology_style 1}
+route_group -all_clock_nets -reuse_existing_global_route true
+set_app_options -as_user_default -list {route.global.global_route_topology_style 0}
+
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+redirect $::sh_dev_null { set_app_options -name opt.internal.current_block_utilization -value [report_utilization] }
+
+
+set_app_options -as_user_default -list {route.global.debug_compact_coef 4}
+set_app_options -as_user_default -list {route.global.debug_compact_coef 1}
+
+
+set_app_options -as_user_default -list {route.global.debug_compact_coef 4}
+set_app_options -as_user_default -list {route.global.debug_compact_coef 1}
+
+
+set_app_options -as_user_default -list {route.global.debug_compact_coef 4}
+set_app_options -as_user_default -list {route.global.debug_compact_coef 1}
+route_group -all_clock_nets
+report_timing -delay_type max -max_paths 3
+report_timing -delay_type min -max_paths 3
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {Clock Tree} -show {true}
+gui_set_map_option -map {Clock Tree} -option {clock} -value {default:FUN_REF_CLK}
+gui_set_map_option -map {Clock Tree} -option {to_level} -value {6}
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {Clock Tree} -show {false}
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {Clock Tree} -show {false}
+gui_set_layout_layer_visibility -toggle [get_layers -filter {mask_name == metal9} -quiet]
+win_set_filter -visible -class routing_blockage -layer {28}
+win_set_filter -visible -class shape -filter {} -layer {28}
+win_set_filter -visible -class via -filter {} -layer {28}
+win_set_filter -visible -class terminal -filter {}  -layer {28}
+win_set_filter -class routing_blockage -layer {28}
+win_set_filter -class shape -filter {} -layer {28}
+win_set_filter -class via -filter {} -layer {28}
+gui_set_layout_layer_visibility -toggle [get_layers -filter {mask_name == metal8} -quiet]
+win_set_filter -visible -class routing_blockage -layer {25 28}
+win_set_filter -visible -class shape -filter {} -layer {25 28}
+win_set_filter -visible -class via -filter {} -layer {25 28}
+win_set_filter -visible -class terminal -filter {}  -layer {25 28}
+win_set_filter -class routing_blockage -layer {25 28}
+win_set_filter -class shape -filter {} -layer {25 28}
+win_set_filter -class via -filter {} -layer {25 28}
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_NWELL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_PO -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_PODMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_CO -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M1 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M1DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA1 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M2 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M2DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA2 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M3 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M3DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA3 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M4 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M4DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA4 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M5 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M5DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA5 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M6 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M6DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA6 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M7 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M7DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA7 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M8DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_VIA8 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M9DMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_BJTDMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DIFF -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DDMY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DIFF_25 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DIOD -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM1EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM2EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM3EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM4EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM5EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM6EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM7EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM8EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DM9EXCL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_DNW -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_ESD_25 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_HOTNWL -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_HVTIMP -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_IP -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_LOGO -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_LVTIMP -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M1PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M2PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M3PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M4PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M5PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M6PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M7PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M8PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_M9PIN -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_NIMP -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_PAD -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_PIMP -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RDIFF -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM1 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM2 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM3 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM4 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM5 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM6 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM7 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM8 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RM9 -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RNW -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_RPOLY -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_SBLK -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_prBoundary -value false
+gui_set_setting -window [gui_get_current_window -types Layout -mru] -setting showLayer_UNASSIGNED -value false
+win_set_filter -visible -class routing_blockage -layer {0-77}
+win_set_filter -visible -class shape -filter {} -layer {0-77}
+win_set_filter -visible -class via -filter {} -layer {0-77}
+win_set_filter -visible -class terminal -filter {}  -layer {0-77}
+win_set_filter -class routing_blockage -layer {0-77}
+win_set_filter -class shape -filter {} -layer {0-77}
+win_set_filter -class via -filter {} -layer {0-77}
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {Clock Tree} -show {true}
+gui_set_map_option -map {Clock Tree} -option {show_cells_by_level} -value {true}
+gui_set_map_option -map {Clock Tree} -option {show_cells_by_level} -value {false}
+gui_set_map_option -map {Clock Tree} -option {show_cells_by_type} -value {true}
+gui_set_map_option -map {Clock Tree} -option {show_cells_by_type} -value {false}
+gui_set_map_option -map {Clock Tree} -option {clock} -value {default:ALU_CLK}
+gui_set_map_option -map {Clock Tree} -option {to_level} -value {1}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {172.495 100.550}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {172.525 100.640}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {172.525 100.640}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {172.545 100.620}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {172.525 100.640}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {172.525 100.640}
+gui_zoom -window [gui_get_current_window -view] -full
+gui_set_map_option -map {Clock Tree} -option {clock} -value {default:FUN_UART_CLK}
+gui_set_map_option -map {Clock Tree} -option {to_level} -value {8}
+gui_set_map_option -map {Clock Tree} -option {clock} -value {default:FUN_TX_CLK}
+gui_set_map_option -map {Clock Tree} -option {to_level} -value {2}
+gui_set_map_option -map {Clock Tree} -option {clock} -value {default:FUN_RX_CLK}
+exit

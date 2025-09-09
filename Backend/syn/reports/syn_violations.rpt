@@ -1,0 +1,52 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 01:19:56 2025
+****************************************
+
+
+   max_transition
+
+                             Required        Actual
+   Net                      Transition     Transition        Slack
+   -----------------------------------------------------------------
+   U0_REG_FILE/n23              0.50           0.52          -0.02  (VIOLATED)
+       PIN :   U0_REG_FILE/U5/S     0.50       0.52          -0.02  (VIOLATED)
+       PIN :   U0_REG_FILE/U225/INP     0.50     0.52        -0.02  (VIOLATED)
+       PIN :   U0_REG_FILE/U6/S     0.50       0.52          -0.02  (VIOLATED)
+       PIN :   U0_REG_FILE/U48/INP     0.50     0.52         -0.02  (VIOLATED)
+       PIN :   U0_REG_FILE/U402/QN     0.50     0.52         -0.02  (VIOLATED)
+   U0_REG_FILE/n27              0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U385/INP     0.50     0.51        -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U11/S     0.50      0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U14/S     0.50      0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U49/INP     0.50     0.51         -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U390/QN     0.50     0.51         -0.01  (VIOLATED)
+   U0_REG_FILE/n28              0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U50/INP     0.50     0.51         -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U12/S     0.50      0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U19/S     0.50      0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U224/INP     0.50     0.51        -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U398/QN     0.50     0.51         -0.01  (VIOLATED)
+   U0_REG_FILE/n31              0.50           0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U52/INP     0.50     0.51         -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U16/S     0.50      0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U21/S     0.50      0.51          -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U223/INP     0.50     0.51        -0.01  (VIOLATED)
+       PIN :   U0_REG_FILE/U397/QN     0.50     0.51         -0.01  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      4                  -0.06  
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   SYSTEM_TOP                   0.00       28928.63       -28928.63 (VIOLATED)
+
+
+1

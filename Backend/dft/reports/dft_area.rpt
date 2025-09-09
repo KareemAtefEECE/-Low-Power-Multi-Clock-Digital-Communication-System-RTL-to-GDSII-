@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : SYSTEM_TOP
+Version: O-2018.06-SP1
+Date   : Thu Aug 28 04:25:14 2025
+****************************************
+
+Library(s) Used:
+
+    saed90nm_max (File: /home/ICer/Downloads/Lib/synopsys/models/saed90nm_max.db)
+    saed90nm_max_cg (File: /home/ICer/Downloads/Lib/synopsys/models/clock_gating/saed90nm_max_cg.db)
+
+Number of ports:                          866
+Number of nets:                          3193
+Number of cells:                         2263
+Number of combinational cells:           1856
+Number of sequential cells:               360
+Number of macros/black boxes:               0
+Number of buf/inv:                        653
+Number of references:                      24
+
+Combinational area:              18202.521600
+Buf/Inv area:                     4318.617657
+Noncombinational area:           12803.788582
+Macro/Black Box area:                0.000000
+Net Interconnect area:             663.661672
+
+Total cell area:                 31006.310182
+Total area:                      31669.971854
+1
