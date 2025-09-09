@@ -113,7 +113,7 @@ set_individual_pin_constraints -ports [get_ports {SCAN_EN}] -sides {4} -offset 2
 # Place Pins
 # =========================================================
 place_pins -self
-place_pins -ports [get_ports *]
+# place_pins -ports [get_ports *]
 
 # check pin placement
 
@@ -123,10 +123,10 @@ check_pin_placement
 # ================= Fifth Step =================== #
 # ================================================ #
 # --- Placement Blockage  
-create_placement_blockage -boundary {{70 70} {150  150}} -name B1 -type hard
-create_placement_blockage -boundary {{150  150} {200 200}} -name B2 -type partial -blocked_percentage 40 
-create_placement_blockage -boundary {{200 200} {250 250}}  -name B3 -type soft
-remove_placement_blockages -all
+#create_placement_blockage -boundary {{70 70} {150  150}} -name B1 -type hard
+#create_placement_blockage -boundary {{150  150} {200 200}} -name B2 -type partial -blocked_percentage 40 
+#create_placement_blockage -boundary {{200 200} {250 250}}  -name B3 -type soft
+#remove_placement_blockages -all
 
 
 
@@ -137,9 +137,9 @@ remove_placement_blockages -all
 #get_lib_cell saed90nm_max/DC*
 # use of tap cell is to remove the latch up problem
 
-create_tap_cells -lib_cell saed90nm_max/DCAP  -pattern every_row -distance 6
-get_cells tap*
-remove_cell tap*
+#create_tap_cells -lib_cell saed90nm_max/DCAP  -pattern every_row -distance 6
+#get_cells tap*
+#remove_cell tap*
 
 # ================================================ #
 # ================== Reports ===================== #
