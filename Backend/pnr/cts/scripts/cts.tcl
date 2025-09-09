@@ -120,10 +120,10 @@ report_clock_settings
 #set_max_transition -clock_path 0.3 [get_clocks ]
 
 # since the design has 338 flops increased the max_fanout to prevent too many buffer levels
-set_app_options -as_user_default -list {cts.common.max_fanout 5}
+#set_app_options -as_user_default -list {cts.common.max_fanout 5}
 clock_opt -from build_clock -to build_clock
 
-#report_clock_qor -type summary
+report_clock_qor -type summary
 
 clock_opt -from route_clock -to route_clock
 
