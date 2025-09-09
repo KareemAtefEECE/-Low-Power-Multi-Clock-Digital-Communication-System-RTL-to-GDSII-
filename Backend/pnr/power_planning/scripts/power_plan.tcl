@@ -118,16 +118,16 @@ set_pg_strategy mesh_vddvss -core \
 compile_pg -strategies mesh_vddvss
 # --- Create Mesh2
 # use less resources from M6,M7 as pitch 50 and width 5
-create_pg_mesh_pattern straps_vddvss2 -layers {{{vertical_layer: M7} {width: 5} {pitch: 50} {spacing: interleaving} {offset:15} {trim:true}} \
-				     {{horizontal_layer: M6} {width: 5} {pitch: 50} {spacing: interleaving} {offset:  15} {trim: true}}}
+#create_pg_mesh_pattern straps_vddvss2 -layers {{{vertical_layer: M7} {width: 5} {pitch: 50} {spacing: interleaving} {offset:15} {trim:true}} \
+#				     {{horizontal_layer: M6} {width: 5} {pitch: 50} {spacing: interleaving} {offset:  15} {trim: true}}}
 # --- Strategie for design mesh 
-set_pg_strategy mesh_vddvss2 -core \
-   			    -pattern {{pattern: straps_vddvss2} {nets: VDD VSS}}  \
-				-extension {{stop: outermost_ring}}
+#set_pg_strategy mesh_vddvss2 -core \
+ #  			    -pattern {{pattern: straps_vddvss2} {nets: VDD VSS}}  \
+#				-extension {{stop: outermost_ring}}
 			    #-extension {{stop: design_boundary_and_generate_pin}}
 
 # --- Compile /Implement Mesh  
-compile_pg -strategies mesh_vddvss2
+#compile_pg -strategies mesh_vddvss2
 
 # --- Verify routing of PG nets satisfies technology design rules
 check_pg_drc
